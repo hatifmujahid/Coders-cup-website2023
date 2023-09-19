@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { Parallax, ParallaxLayer } from "@react-spring/parallax"
+import "./App.css"
+import HomePage from "./components/HomePage"
+import "./fonts/CircularSpotifyText-Black.otf"
+import "./fonts/CircularSpotifyText-BlackItalic.otf"
+import "./fonts/CircularSpotifyText-Bold.otf"
+import "./fonts/CircularSpotifyText-Book.otf"
+import "./fonts/CircularSpotifyText-Light.otf"
+import "./fonts/CircularSpotifyText-Medium.otf"
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div >
+      <Parallax pages={1} style={{overflow:"hidden", top: 0, left: 0}}>
+        <ParallaxLayer offset={0} speed={1} >
+          <HomePage />
+        </ParallaxLayer>
+      </Parallax>
+    </div>
   )
 }
 
