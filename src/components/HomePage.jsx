@@ -13,9 +13,9 @@ function HomePage(){
           height: "100%",
     
         }}>
-            <div>
-                <img src={codersCupLogo} alt="logo" style={{width:"40%",height:"40%", marginTop:"-20px",left:"28%",position:"relative", zIndex:2}} />
-                <text  style={{fontFamily:"spotifyBold", fontSize: "150%"}}>Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM NUCES, are now open. In a world where coding meets the upside down, join us if you dare!</text>
+            <div className="flex flex-col justify-center items-center">
+                <img src={codersCupLogo} alt="logo" style={{width:"40%",height:"40%", marginTop:"-20px",position:"relative", zIndex:2}} />
+                <p class="text-lg font-normal md:text-lg sm:text-sm text-white lg:text-xl dark:text-white w-6/12 text-center " style={{fontFamily:"spotifyBold", fontSize: "150%"}}>Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM NUCES, are now open. In a world where coding meets the upside down, join us if you dare!</p>
             </div>
         </div>
         </>
