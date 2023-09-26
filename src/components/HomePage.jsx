@@ -1,25 +1,26 @@
-import {codersCupLogo, homeBackground} from "../assets"
+import {codersCupLogo, homeBackground, hawkingsLogo} from "../assets"
+import Navbar from "./Navbar";
 import "./homepage.css"
 function HomePage(){
     return (
         <>
-        // TODO: NAVBAR
-        <div style={{fontFamily:"spotifyMedium"}}>
-         
-        </div>
-        <div classname="homeimg" style={{
+        <Navbar />
+        <div className="homeimg mt-8" style={{
           backgroundImage: `url(${homeBackground})`,
           backgroundSize: "contain",
-          backgroundPosition: "top 4em center",
+          backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           height: "100%",
     
         }}>
             <div className="flex flex-col justify-center items-center">
-               
-                <img src={codersCupLogo} alt="logo" style={{width:"40%",height:"40%", marginTop:"-20px",position:"relative", zIndex:2}} />
-                <p class="font-normal md:text-sm sm:text-xs text-white lg:text-xl dark:text-white w-6/12 text-center " style={{fontFamily:"spotifyBold"}}>Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM NUCES, are now open. In a world where coding meets the upside down, join us if you dare!</p>
-                <button type="button" class="text-black bg-white hover:bg-gray-900 focus:outline-none  focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:hover:bg-black hover:text-white mt-6 hover: box dark:focus:ring-black dark:border-black">Register now!</button>
+                <img src={codersCupLogo} alt="logo" className="fixed sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
+                <p className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-6/12 text-center  " style={{fontFamily:"spotifyMedium"}}>Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM NUCES, are now open. In a world where coding meets the upside down, join us if you dare!</p>
+                <div>
+                  <button id= "glow" style={{fontFamily:"spotifyMedium"}} className=" hover:scale-105 z-2 mt-16 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"> Register Today
+                  </button>
+                  <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10" />
+                </div>
             </div>
         </div>
         </>
