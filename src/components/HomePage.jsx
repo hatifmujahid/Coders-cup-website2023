@@ -4,8 +4,10 @@ function HomePage(){
     return (
         <>
         // TODO: NAVBAR
-        <div style={{fontFamily:"spotifyMedium"}}>navbar div</div>
-        <div className="homeimg" style={{
+        <div style={{fontFamily:"spotifyMedium"}}>
+         
+        </div>
+        <div classname="homeimg" style={{
           backgroundImage: `url(${homeBackground})`,
           backgroundSize: "contain",
           backgroundPosition: "top 4em center",
