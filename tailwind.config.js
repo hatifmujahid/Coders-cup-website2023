@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'navbar-red': '#ff0000',
+      },
     }
   },
   plugins: [],
