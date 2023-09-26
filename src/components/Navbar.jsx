@@ -5,7 +5,7 @@ function Navbar(){
     const [active, setActive] = useState("");
     return(
         <div className="min-height-40 mt-5 mb-5 ml-10 flex flex-row ">
-             <ul className='list-none text-white flex flex-row '>
+             <ul className='mt-4 list-none text-white flex flex-row '>
             {navLinks.map((nav) => (
                 <li
                 key={nav.id}
