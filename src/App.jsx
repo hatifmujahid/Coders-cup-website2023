@@ -10,14 +10,14 @@ import TeamPage from "./components/TeamPage"
 import teamList from "./components/teamList"
 import teambackground from "./assets/teamBackground.jpg"
 import teamHeader from "./assets/teamHeader.png"
-import fastbg from "./assets/fastbg.png"
-import { useEffect, useRef, useState } from "react"
 import Navbar from "./components/Navbar"
 
 function App() {
   return (
     <>
+    <a id="button" href="#">&#8593;</a>
     <Navbar />
+    
       <HomePage />
       <div className="flex flex-col justify-center items-center"
             style={{
