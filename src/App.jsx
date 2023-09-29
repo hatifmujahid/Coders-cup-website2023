@@ -26,7 +26,7 @@ function App() {
               backgroundRepeat: "no-repeat",
               height: "100vh",
               width: "100vw",
-              
+              backgroundAttachment: "fixed"
             }}>
             <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
           </div> 
@@ -37,38 +37,40 @@ function App() {
             </div>
           )
         })}
-      {/* <Parallax ref={parallax} pages={7} style={{overflow:"auto", top: 0, left: 0}}>
-        <ParallaxLayer  offset={0} speed={0}>
-          <HomePage />
-        </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={1} >
-          <div className="flex flex-col justify-center items-center"
-            style={{
-              backgroundImage: `url(${teambackground})`,
-              backgroundSize: "cover",
-              position: "relative",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              width: "100%",
-              
-            }}>
-            <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
-          </div>            
-        </ParallaxLayer>
-        {teamList.map((team,index) => {
-          return (
-            <ParallaxLayer offset={index + 2} speed={(index + 2)} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
-              <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
-            </ParallaxLayer>
-          )
-        })}
-        <ParallaxLayer offset={8} speed={0} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
-
-        </ParallaxLayer>
-      </Parallax> */}
+        
     </div>
   )
 }
 
 export default App
+
+{/* <Parallax ref={parallax} pages={7} style={{overflow:"auto", top: 0, left: 0}}>
+  <ParallaxLayer  offset={0} speed={0}>
+    <HomePage />
+  </ParallaxLayer>
+  <ParallaxLayer offset={1} speed={1} >
+    <div className="flex flex-col justify-center items-center"
+      style={{
+        backgroundImage: `url(${teambackground})`,
+        backgroundSize: "cover",
+        position: "relative",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100%",
+        width: "100%",
+        
+      }}>
+      <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
+    </div>            
+  </ParallaxLayer>
+  {teamList.map((team,index) => {
+    return (
+      <ParallaxLayer offset={index + 2} speed={(index + 2)} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
+        <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
+      </ParallaxLayer>
+    )
+  })}
+  <ParallaxLayer offset={8} speed={0} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
+
+  </ParallaxLayer>
+</Parallax> */}
