@@ -37,7 +37,7 @@ function App() {
               width: "100%",
               
             }}>
-            <img src={teamHeader} alt="logo" className="relative" ></img>
+            <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
           </div>            
         </ParallaxLayer>
         {teamList.map((team,index) => {
