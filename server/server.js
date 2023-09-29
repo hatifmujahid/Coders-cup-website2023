@@ -1,8 +1,7 @@
 import { MongoClient } from "mongodb";
-
-
-// Replace the uri string with your connection string.
-const uri = "mongodb+srv://hatif:BKlC6hFOlggJSkuy@cluster0.vupxsam.mongodb.net/?retryWrites=true&w=majority";
+import dotenv from "dotenv";
+dotenv.config({ path: "../.env" });
+const uri = process.env.MONGOURI
 
 const client = new MongoClient(uri);
 
