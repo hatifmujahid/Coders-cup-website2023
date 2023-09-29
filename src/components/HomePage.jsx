@@ -4,16 +4,18 @@ import "./homepage.css"
 function HomePage(){
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="homeimg mt-8" style={{
           backgroundImage: `url(${homeBackground})`,
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-          height: "100%",
+            position:"relative",
+          height: "100vh",
+          width: "100vw",
     
         }}>
-            <div className="flex flex-col justify-center items-center">
+            <div className="pt-16 flex flex-col justify-center items-center">
                 <img src={codersCupLogo} alt="logo" className="fixed sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
                 <p className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-6/12 text-center  " style={{fontFamily:"spotifyMedium"}}>Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM NUCES, are now open. In a world where coding meets the upside down, join us if you dare!</p>
                 <div>

@@ -14,14 +14,30 @@ import teamHeader from "./assets/teamHeader.png"
 import fastbg from "./assets/fastbg.png"
 import { useEffect, useRef, useState } from "react"
 function App() {
-  const parallax = useRef();
-  const [page, setPage] = useState(0)
-  useEffect(() => {
-    parallax.current.scrollTo(setPage((page)=>page+1))
-  }, [])
   return (
     <div >
-      <Parallax ref={parallax} pages={7} style={{overflow:"auto", top: 0, left: 0}}>
+      <HomePage />
+      <div className="flex flex-col justify-center items-center"
+            style={{
+              backgroundImage: `url(${teambackground})`,
+              backgroundSize: "cover",
+              position: "relative",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              height: "100vh",
+              width: "100vw",
+              
+            }}>
+            <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
+          </div> 
+          {teamList.map((team,index) => {
+          return (
+            <div style={{top:0, left:0,height:"100vh", width:"100vw"}} >
+              <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
+            </div>
+          )
+        })}
+      {/* <Parallax ref={parallax} pages={7} style={{overflow:"auto", top: 0, left: 0}}>
         <ParallaxLayer  offset={0} speed={0}>
           <HomePage />
         </ParallaxLayer>
@@ -37,7 +53,7 @@ function App() {
               width: "100%",
               
             }}>
-            <img src={teamHeader} alt="logo" className="relative" ></img>
+            <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
           </div>            
         </ParallaxLayer>
         {teamList.map((team,index) => {
@@ -50,7 +66,7 @@ function App() {
         <ParallaxLayer offset={8} speed={0} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
 
         </ParallaxLayer>
-      </Parallax>
+      </Parallax> */}
     </div>
   )
 }
