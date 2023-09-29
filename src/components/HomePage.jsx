@@ -23,6 +23,7 @@ function HomePage(){
                   <div>
                   <Link to={'register'}>
                     <button id= "glow" style={{fontFamily:"spotifyMedium"}} className=" hover:scale-105  z-2 mt-16 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"> Register Today
+
                     </button>
                     </Link>
                     <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10" />
