@@ -14,10 +14,41 @@ import fastbg from "./assets/fastbg.png"
 import { useEffect, useRef, useState } from "react"
 
 function App() {
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (divRef.current) {
+        const div = divRef.current;
+        const scrollPosition = window.scrollY;
+        const divPosition = div.getBoundingClientRect().top;
+        const divHeight = div.offsetHeight;
+  
+        // Calculate the opacity based on scroll position
+        const distanceFromTop = scrollPosition - divPosition;
+        const opacity = Math.min(1, Math.max(0, 1 - (distanceFromTop / divHeight)));
+  
+        // Invert the opacity
+        const invertedOpacity = 1 - (opacity-0.2);
+  
+        // Apply the inverted opacity to the div's style
+        div.style.opacity = invertedOpacity;
+      }
+    
+    };
+  
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+  
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <HomePage />
-      <div className="flex flex-col justify-center items-center"
+      <div ref={divRef} className="flex flex-col justify-center items-center duration-10 ease-in-out"
             style={{
               backgroundImage: `url(${teambackground})`,
               backgroundSize: "cover",
@@ -27,6 +58,7 @@ function App() {
               height: "100vh",
               width: "100vw",
               backgroundAttachment: "fixed"
+              
             }}>
             <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
           </div> 

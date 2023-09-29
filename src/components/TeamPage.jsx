@@ -1,4 +1,8 @@
+import React, {useRef, useEffect} from "react";
+
+
 function TeamPage({backgroundImageUrl, teamNameImage, description}){
+  
     return <div className="flex flex-col justify-center items-center"
      style={{
         backgroundImage: `url(${backgroundImageUrl})`,
