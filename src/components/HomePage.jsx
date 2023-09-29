@@ -7,10 +7,12 @@ function HomePage(){
         {/* <Navbar /> */}
         <div className="homeimg mt-8" style={{
           backgroundImage: `url(${homeBackground})`,
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-          height: "100%",
+            position:"relative",
+          height: "100vh",
+          width: "100vw",
     
         }}>
             <div className="pt-16 flex flex-col justify-center items-center">

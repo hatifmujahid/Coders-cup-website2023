@@ -1,4 +1,4 @@
-import homeBackground from "./homeBG.png";
+import homeBackground from "./homeBG.jpg";
 import codersCupLogo from "./logo.png";
 import hawkingsLogo from "./hawkinsSchool.png"
 import acmLogo from "./acmnuces.png";

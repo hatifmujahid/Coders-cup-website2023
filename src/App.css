@@ -1,6 +1,7 @@
 html{
   background-color: black;
   margin:0;
+  overflow-x: hidden;
 }
 @font-face {
   font-family: "spotifyBlack";   /*Can be any text*/
