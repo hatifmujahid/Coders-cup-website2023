@@ -4,7 +4,7 @@ import "./homepage.css"
 function HomePage(){
     return (
         <>
-        <div className="homeimg mt-8" style={{
+        <div className="homeimg" style={{
           backgroundImage: `url(${homeBackground})`,
           backgroundSize: "cover",
           backgroundPosition: "center",

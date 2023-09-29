@@ -1,25 +1,37 @@
-// import navLinks from "./navLinks";
-// import { useState } from "react";
-// import { acmLogo } from "../assets";
-// function Navbar(){
-//     const [active, setActive] = useState("");
-//     return(
-//         <div className="min-height-40 mt-5 mb-5 ml-10 flex flex-row ">
-//              <ul className='mt-4 list-none text-white flex flex-row '>
-//             {navLinks.map((nav) => (
-//                 <li
-//                 key={nav.id}
-//                 className={`${
-//                     active === nav.title ? "text-white" : "text-secondary"
-//                 } hover:text-navbar-red text-[18px] font-medium cursor-pointer ml-8 lg:text-xl md:text-base sm:text-base`}
-//                 onClick={() => setActive(nav.title)}
-//                 >
-//                 <a style={{fontFamily:"spotifyMedium"}} href={`#${nav.title}`}>{nav.title}</a>
-//                 </li>
-//             ))}
-//         </ul>
-//         <img src={acmLogo}  className="lg:ml-[70%] md:ml-[50%] sm:ml-[40%] w-30 h-20" alt="logo"/>
-//         </div>
-//     );
-// }
-// export default Navbar;
+import { acmLogo } from "../assets";
+import { useState } from "react";
+function Navbar(){
+    const [isNavbarOpen, setNavbarOpen] = useState(false);
+
+  const handleNavbarToggle = () => {
+    setNavbarOpen((prevState) => !prevState);
+  };
+    return(
+<nav class="bg-white border-black dark:bg-black">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center">
+        <img src={acmLogo} class="h-16 w-20 mr-3" alt="acm Logo" />
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" aria-controls="navbar-default"
+          aria-expanded={isNavbarOpen ? 'true' : 'false'}
+          onClick={handleNavbarToggle} class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div className={`${isNavbarOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-gray-700">
+        <li>
+          <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-red-500" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="/register" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    );
+}
+export default Navbar;

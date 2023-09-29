@@ -12,10 +12,12 @@ import teambackground from "./assets/teamBackground.jpg"
 import teamHeader from "./assets/teamHeader.png"
 import fastbg from "./assets/fastbg.png"
 import { useEffect, useRef, useState } from "react"
+import Navbar from "./components/Navbar"
 
 function App() {
   return (
     <>
+    <Navbar />
       <HomePage />
       <div className="flex flex-col justify-center items-center"
             style={{
