@@ -1,10 +1,8 @@
 import {codersCupLogo, homeBackground, hawkingsLogo} from "../assets"
-import Navbar from "./Navbar";
 import "./homepage.css"
 function HomePage(){
     return (
         <>
-        {/* <Navbar /> */}
         <div className="homeimg mt-8" style={{
           backgroundImage: `url(${homeBackground})`,
           backgroundSize: "cover",
