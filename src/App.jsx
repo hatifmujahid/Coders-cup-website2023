@@ -10,8 +10,7 @@ import TeamPage from "./components/TeamPage"
 import teamList from "./components/teamList"
 import teambackground from "./assets/teamBackground.jpg"
 import teamHeader from "./assets/teamHeader.png"
-import fastbg from "./assets/fastbg.png"
-import { useEffect, useRef, useState } from "react"
+import Navbar from "./components/Navbar"
 
 function App() {
   const divRef = useRef(null);
@@ -47,6 +46,9 @@ function App() {
   }, []);
   return (
     <>
+    <a id="button" href="#">&#8593;</a>
+    <Navbar />
+    
       <HomePage />
       <div ref={divRef} className="flex flex-col justify-center items-center duration-10 ease-in-out"
             style={{
@@ -83,34 +85,3 @@ function App() {
 }
 
 export default App
-
-{/* <Parallax ref={parallax} pages={7} style={{overflow:"auto", top: 0, left: 0}}>
-  <ParallaxLayer  offset={0} speed={0}>
-    <HomePage />
-  </ParallaxLayer>
-  <ParallaxLayer offset={1} speed={1} >
-    <div className="flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${teambackground})`,
-        backgroundSize: "cover",
-        position: "relative",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        height: "100%",
-        width: "100%",
-        
-      }}>
-      <img src={teamHeader} alt="logo" className="relative mt-[-50px]" ></img>
-    </div>            
-  </ParallaxLayer>
-  {teamList.map((team,index) => {
-    return (
-      <ParallaxLayer offset={index + 2} speed={(index + 2)} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
-        <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
-      </ParallaxLayer>
-    )
-  })}
-  <ParallaxLayer offset={8} speed={0} style={{top:0, left:0,height:"100vh", width:"100vw"}} >
-
-  </ParallaxLayer>
-</Parallax> */}
