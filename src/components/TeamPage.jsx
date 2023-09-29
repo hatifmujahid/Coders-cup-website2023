@@ -10,7 +10,7 @@ function TeamPage({backgroundImageUrl, teamNameImage, description}){
         width: "100%",
         backgroundAttachment: "fixed"
       }}>
-        <img src={teamNameImage} alt="logo" className="relative sm:scale-75" ></img>
-        <p className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-6/12 text-center  " style={{fontFamily:"spotifyMedium"}}>{description}</p></div>;
+        <img src={teamNameImage} alt="teamnamelogo" className="relative sm:scale-75"></img>
+        <p className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-6/12 text-center text" style={{fontFamily:"spotifyMedium"}}>{description}</p></div>;
 }
 export default TeamPage;

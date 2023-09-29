@@ -1,4 +1,3 @@
-import { Parallax, ParallaxLayer} from "@react-spring/parallax"
 import "./App.css"
 import HomePage from "./components/HomePage"
 import "./fonts/CircularSpotifyText-Black.otf"
@@ -13,9 +12,10 @@ import teambackground from "./assets/teamBackground.jpg"
 import teamHeader from "./assets/teamHeader.png"
 import fastbg from "./assets/fastbg.png"
 import { useEffect, useRef, useState } from "react"
+
 function App() {
   return (
-    <div >
+    <>
       <HomePage />
       <div className="flex flex-col justify-center items-center"
             style={{
@@ -37,8 +37,16 @@ function App() {
             </div>
           )
         })}
+      
+        <footer class="bg-white rounded-lg shadow m-3 dark:bg-black">
+            <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+              <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">ACM™</a>. All Rights Reserved.
+            </span>
+            </div>
+        </footer>
+
         
-    </div>
+    </>
   )
 }
 
