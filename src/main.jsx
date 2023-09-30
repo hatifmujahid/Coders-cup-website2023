@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import Register from './components/RegisterPage'
-import Confirm from './components/ConfirmPage'
+import Confirm from './components/confirmPage'
 
 const BrowserRouter = createBrowserRouter([
   {
