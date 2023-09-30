@@ -15,6 +15,8 @@ import yesButton from "./yesBtn.png";
 import confirmHeader from "./confirmHeader.png";
 import registerHeader from "./registerHeader.png";
 import registerCardIcon from "./registerCard.png"
+import registrationPlaceholder from "./registrationPlaceholder.png"
+import redacted from "./redacted.png"
 export {
     mindFlayerHeader,
     homeBackground,
@@ -32,5 +34,7 @@ export {
     yesButton,
     confirmHeader,
     registerHeader,
-    registerCardIcon
+    registerCardIcon,
+    registrationPlaceholder,
+    redacted
 }
