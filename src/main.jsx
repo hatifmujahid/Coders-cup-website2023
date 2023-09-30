@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import Register from './components/register'
+import Confirm from './components/confirmPage'
 
 const BrowserRouter = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const BrowserRouter = createBrowserRouter([
   {
     path: "register",
     element: <Register />,
+  },
+  {
+    path:"register/confirm",
+    element: <Confirm />,
   }
 ]);
 

@@ -1,0 +1,23 @@
+.button-confirm{
+    box-sizing: border-box;
+    position: relative;
+    width: 180px;
+    height: 60px;
+
+    background: #D9D3CD;
+    border: 3px dashed #000000;
+    box-shadow: 10px 8px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: 'Circular Std';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 10px;
+    text-align: center;
+
+    color: #000000;
+
+
+
+
+}
