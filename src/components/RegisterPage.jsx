@@ -30,7 +30,7 @@ export default function Register() {
             >
                 <div className="pt-8 flex flex-col justify-center items-center z-1">
                     
-                    <div style={{ fontFamily: 'anonymousPro',backgroundColor: "#D9D3CD" }} className='p-10 mt-[5%] border-4 border-dashed border-gray-800 w-[70%] h-[70%] z-2'>
+                    <div style={{ fontFamily: 'anonymousPro',backgroundColor: "#D9D3CD" }}  id="clipboard" className='p-10 mt-[5%] border-4 border-dashed border-gray-800 w-[80%] h-[80%] z-2'>
                         <p
                         className="text-black md:text-2xl text-l lg:text-5xl  text-center mb-4"
                         style={{ fontFamily: 'circularStd' }}
@@ -100,8 +100,7 @@ export default function Register() {
                             <button className='button-confirm lg:ml-[80%] ml-[40%] mt-8 lg:text-2xl md:text-xl  p-4 text-lg' >Confirm </button>
                         </Link>
                     </div>
-                    
-                </div>
+                    </div>
             </div>
         </>
     );
