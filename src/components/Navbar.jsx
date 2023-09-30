@@ -1,11 +1,23 @@
 import { acmLogo } from '../assets';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 function Navbar() {
     const [isNavbarOpen, setNavbarOpen] = useState(false);
 
     const handleNavbarToggle = () => {
         setNavbarOpen((prevState) => !prevState);
     };
+    useEffect(() => {
+        if(window.location.pathname === "/register"){
+            let button = document.getElementsByClassName("register-btn")[0]
+            button.style.boxShadow = "0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000,0 0 100px #FF0000"
+
+        }
+        else{
+            let button = document.getElementsByClassName("home-btn")[0]
+            button.style.boxShadow = "0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000,0 0 100px #FF0000"
+        }
+    }
+    )
     return (
         <nav class="bg-white border-black dark:bg-black">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -30,12 +42,13 @@ function Navbar() {
                     class="hidden w-full md:block md:w-auto"
                     id="navbar-default"
                 >
-                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-gray-700">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-gray-700">
                         <li>
                             <a
                                 href="/"
-                                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-red-500"
+                                class="home-btn block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 aria-current="page"
+                                
                             >
                                 Home
                             </a>
@@ -43,7 +56,7 @@ function Navbar() {
                         <li>
                             <a
                                 href="/register"
-                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                class="register-btn block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                             >
                                 Register
                             </a>
