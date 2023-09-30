@@ -81,7 +81,7 @@ export default function Register() {
                                 <label className="lg:ml-[40%] lg:text-2xl md:text-xl sm:text-base" style={{ fontFamily: 'anonymousPro' }}>
                                     Batch:{' '}
                                 </label>
-                                <input onChange={(e) => setTeamBatch(e.target.value)} type="text" className="lg:ml-2 h-10 w-20" placeholder="20K" />
+                                <input onChange={(e) => setTeamBatch(e.target.value)} type="text" className="lg:ml-2 h-10 w-20" placeholder="20K" maxLength={3} />
                             </div>
                             <hr className="mt-4" />
                             <div className="flex flex-row mt-8">
@@ -101,6 +101,7 @@ export default function Register() {
                                             type="text"
                                             className="lg:ml-2 h-10"
                                             placeholder="k201234"
+                                            maxLength={7}
                                         />
                                     </div>
                                     <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
@@ -130,6 +131,7 @@ export default function Register() {
                                             type="text"
                                             className="lg:ml-2 h-10"
                                             placeholder="k201234"
+                                            maxLength={7}
                                         />
                                     </div>
                                     <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
@@ -159,6 +161,7 @@ export default function Register() {
                                             type="text"
                                             className="lg:ml-2 h-10"
                                             placeholder="k201234"
+                                            maxLength={7}
                                         />
                                     </div>
                                     <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
