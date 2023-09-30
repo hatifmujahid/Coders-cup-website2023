@@ -6,6 +6,17 @@ import { Link } from 'react-router-dom';
 import { redacted } from '../assets';
 
 export default function Register() {
+    const [teamName, setTeamName] = React.useState("");
+    const [teamBatch, setTeamBatch] = React.useState("");
+    const [leaderName, setLeaderName] = React.useState("");
+    const [leaderId, setLeaderId] = React.useState("");
+    const [leaderEmail, setLeaderEmail] = React.useState("");
+    const [mem1Name, setMem1Name] = React.useState("");
+    const [mem1Id, setMem1Id] = React.useState("");
+    const [mem1Email, setMem1Email] = React.useState("");
+    const [mem2Name, setMem2Name] = React.useState("");
+    const [mem2Id, setMem2Id] = React.useState("");
+    const [mem2Email, setMem2Email] = React.useState("");
     const [register, setRegister] = React.useState(false);
     function handleRegister() {
         setRegister(true);
