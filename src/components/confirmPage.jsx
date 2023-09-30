@@ -1,4 +1,4 @@
-import RegisterCard from './registerCard';
+import RegisterCard from './RegisterCard';
 import { Link } from 'react-router-dom';
 import { goBackButton,yesButton,homeBackground,confirmHeader } from '../assets';
 

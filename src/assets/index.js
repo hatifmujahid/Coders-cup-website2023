@@ -33,5 +33,4 @@ export {
     confirmHeader,
     registerHeader,
     registerCardIcon
-
 }
