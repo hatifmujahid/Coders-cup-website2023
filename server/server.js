@@ -25,11 +25,15 @@ let db = conn.db('coder');
 export default db;
 
 app.post('/submit', async (req, res) => {
-    let collection = await db.collection('participants');
-    let newDocument = req.body;
-    newDocument.date = new Date();
-    let result = await collection.insertOne(newDocument);
-    res.send(result).status(204);
+    try {
+        let collection = await db.collection('participants');
+        let newDocument = req.body;
+        newDocument.date = new Date();
+        let result = await collection.insertOne(newDocument);
+        res.send(result);
+    } catch (e) {
+        console.error(e);
+    }
 });
 
 app.listen(5000, () => console.log('Server ready at http://localhost:5000'));
