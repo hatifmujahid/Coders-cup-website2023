@@ -28,7 +28,7 @@ export default function Register() {
                     backgroundAttachment: 'fixed',
                 }}
             >
-                <div className="pt-8 flex flex-col justify-center items-center z-1">
+                <div className="pt-8 flex flex-col justify-center items-center z-1 pb-40">
                     
                     <div style={{ fontFamily: 'anonymousPro',backgroundColor: "#D9D3CD" }}  id="clipboard" className='p-10 mt-[5%] border-4 border-dashed border-gray-800 w-[80%] h-[80%] z-2'>
                         <p
