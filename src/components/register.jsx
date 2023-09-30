@@ -1,7 +1,5 @@
 import React from 'react';
-import homeBackground from '../assets/homeBG.jpg';
-import RegisterHeader from '../assets/registerHeader.png';
-import ConfirmHeader from '../assets/confirmHeader.png';
+import { homeBackground, registerHeader } from '../assets';
 import Navbar from './Navbar';
 import './register.css'
 import { Link } from 'react-router-dom';
@@ -33,7 +31,7 @@ export default function Register() {
                     }}
                 >
                     <div className="pt-8 flex flex-col justify-center items-center">
-                        <img src={RegisterHeader} alt="logo" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative" />
+                        <img src={registerHeader} alt="logo" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative" />
                         <Link to={'confirm'}>
                             <button className='button-confirm' >Confirm </button>
                         </Link>

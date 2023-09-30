@@ -1,10 +1,6 @@
 import RegisterCard from './registerCard';
-import goBack from '../assets/goBack.png'
-import YesBtn from '../assets/yesBtn.png';
-import homeBackground from '../assets/homeBG.jpg';
-import ConfirmHeader from '../assets/confirmHeader.png';
 import { Link } from 'react-router-dom';
-
+import { goBackButton,yesButton,homeBackground,confirmHeader } from '../assets';
 
 export default function ConfirmPage() {
     return (
@@ -22,7 +18,7 @@ export default function ConfirmPage() {
             }}
         >
             <div className="pt-8 flex flex-col justify-center items-center">
-                <img src={ConfirmHeader} alt="confirmdetails" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
+                <img src={confirmHeader} alt="confirmdetails" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
                 <p
                     className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
                     style={{ fontFamily: 'spotifyMedium' }}
@@ -37,12 +33,12 @@ export default function ConfirmPage() {
                 <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row relative items-center justify-center ">
                     <Link to={'/register'}>
                         <img
-                            src={goBack}
+                            src={goBackButton}
                             alt="goBack"
                             className="relative scale-[50%] z-10 hover:cursor-pointer hover:scale-[60%] transition"
                         />
                     </Link>
-                    <img src={YesBtn} alt="yes button" className="relative scale-[50%] z-10 hover:cursor-pointer hover:scale-[60%] transition" />
+                    <img src={yesButton} alt="yes button" className="relative scale-[50%] z-10 hover:cursor-pointer hover:scale-[60%] transition" />
                 </div>
             </div>
         </div>

@@ -10,6 +10,11 @@ import hawkingsHounds from "./hawkinshounds.jpg";
 import hawkingsHoundsHeader from "./hawkinsHoundsHeader.png";
 import veccnaValkerie from "./veccnavalkerie.jpg";
 import veccnaValkerieHeader from "./veccnavalkerieHeader.png";
+import goBackButton from "./goBack.png";
+import yesButton from "./yesBtn.png";
+import confirmHeader from "./confirmHeader.png";
+import registerHeader from "./registerHeader.png";
+import registerCardIcon from "./registerCard.png"
 export {
     mindFlayerHeader,
     homeBackground,
@@ -22,5 +27,11 @@ export {
     hawkingsHounds,
     hawkingsHoundsHeader,
     veccnaValkerie,
-    veccnaValkerieHeader
+    veccnaValkerieHeader,
+    goBackButton,
+    yesButton,
+    confirmHeader,
+    registerHeader,
+    registerCardIcon
+
 }
