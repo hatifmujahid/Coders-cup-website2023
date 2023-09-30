@@ -31,6 +31,18 @@ html{
 }
 
 @font-face {
+  font-family: "circularStd";   /*Can be any text*/
+  src: local("circular-std"),
+    url("./fonts/circular-std.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "anonymousPro";   /*Can be any text*/
+  src: local("AnonymousPro-Regular"),
+    url("./fonts/AnonymousPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "spotifyBlack";   /*Can be any text*/
   src: local("CircularSpotifyText-Black"),
     url("./fonts/CircularSpotifyText-Black.otf") format("truetype");

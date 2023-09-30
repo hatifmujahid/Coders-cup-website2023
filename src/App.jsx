@@ -6,12 +6,13 @@ import './fonts/CircularSpotifyText-Bold.otf';
 import './fonts/CircularSpotifyText-Book.otf';
 import './fonts/CircularSpotifyText-Light.otf';
 import './fonts/CircularSpotifyText-Medium.otf';
+import "./fonts/AnonymousPro-Regular.ttf"
+import "./fonts/circular-std.ttf"
 import TeamPage from './components/TeamPage';
 import teamList from './components/teamList';
 import teambackground from './assets/teamBackground.jpg';
 import teamHeader from './assets/teamHeader.png';
 import Navbar from './components/Navbar';
-import { useEffect, useRef, useState } from 'react';
 
 function App() {
     

@@ -1,8 +1,6 @@
 .button-confirm{
     box-sizing: border-box;
     position: relative;
-    width: 180px;
-    height: 60px;
 
     background: #D9D3CD;
     border: 3px dashed #000000;
@@ -11,13 +9,23 @@
     font-family: 'Circular Std';
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
     line-height: 10px;
     text-align: center;
-
+    align-items: flex-end;
     color: #000000;
-
-
-
-
 }
+input {
+    box-shadow: 5px 5px rgb(195, 184, 184);
+    padding: 8px;
+  }
+
+  hr{
+    border: 1px solid #9F9F9F;
+  }
+
+#clipboard{
+    box-shadow: 0px 0px 0px 20px #B88655;
+}
+
+
+

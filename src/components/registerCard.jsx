@@ -1,8 +1,10 @@
-import registerCard from '../assets/registerCard.png';
+
+import { registerCardIcon } from '../assets';
 export default function RegisterCard() {
     return (
-        <div className="flex items-center justify-center">
-            <img src={registerCard} alt="registerCard" className="w-full max-w-[80%] sm:max-w-[80%] md:max-w-[80%] lg:max-w-[80%] xl:max-w-[80%]" />
+        <div style={{ fontFamily: 'anonymousPro' }} className="flex items-center justify-center">
+            
+            <img src={registerCardIcon} alt="registerCard" className="w-full max-w-[90%] sm:max-w-[90%] md:max-w-[90%] lg:max-w-[90%] xl:max-w-[90%]" />
             <p className="absolute">Name</p>
             <p className="absolute" style={{ marginTop: '50px', marginRight: '50px' }}>
                 ID
