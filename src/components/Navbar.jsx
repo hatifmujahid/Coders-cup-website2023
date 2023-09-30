@@ -9,12 +9,12 @@ function Navbar() {
     useEffect(() => {
         if(window.location.pathname === "/register"){
             let button = document.getElementsByClassName("register-btn")[0]
-            button.style.boxShadow = "0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000,0 0 100px #FF0000"
+            button.style.color = "#F44336"
 
         }
         else{
             let button = document.getElementsByClassName("home-btn")[0]
-            button.style.boxShadow = "0 0 5px #FF0000, 0 0 25px #FF0000, 0 0 50px #FF0000,0 0 100px #FF0000"
+            button.style.color = "#F44336"
         }
     }
     )

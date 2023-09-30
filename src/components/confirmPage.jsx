@@ -29,12 +29,10 @@ export default function ConfirmPage() {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'repeat',
                 position: 'relative',
-                height: '100vh',
-                width: '100vw',
                 backgroundAttachment: 'fixed',
             }}
         >
-            <div className="pt-8 flex flex-col justify-center items-center">
+            <div className="pt-8 flex flex-col justify-center items-center pb-20">
                 <img src={confirmHeader} alt="confirmdetails" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
                 <p
                     className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
