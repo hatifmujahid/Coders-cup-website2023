@@ -1,22 +1,35 @@
-import { MongoClient } from "mongodb";
-import dotenv from "dotenv";
-dotenv.config({ path: "../.env" });
-const uri = process.env.MONGOURI
+import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config({ path: '../.env' });
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
-const client = new MongoClient(uri);
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
-async function run() {
-    try {
-      const database = client.db('coder');
-      const participants = database.collection('participants');
-      // Query for a movie that has the title 'Back to the Future'
-      const query = { teamName: 'Cyber Rizzlers' };
-      const participant = await participants.findOne(query);
-      console.log(participant);
-    } finally {
-      // Ensures that the client will close when you finish/error
-      await client.close();
-    }
-  }
-  run().catch(console.dir);
+const connectionString = process.env.MONGOURI || '';
 
+const client = new MongoClient(connectionString);
+
+let conn;
+try {
+    conn = await client.connect();
+} catch (e) {
+    console.error(e);
+}
+
+let db = conn.db('coder');
+
+export default db;
+
+app.post('/submit', async (req, res) => {
+    let collection = await db.collection('participants');
+    let newDocument = req.body;
+    newDocument.date = new Date();
+    let result = await collection.insertOne(newDocument);
+    res.send(result).status(204);
+});
+
+app.listen(5000, () => console.log('Server ready at http://localhost:5000'));
