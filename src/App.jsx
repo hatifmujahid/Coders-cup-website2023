@@ -18,11 +18,7 @@ import Footer from './components/footer';
 function App() {
     
     return (
-        <>
-            <a id="button" href="#">
-                &#8593;
-            </a>
-            
+        <>  
             <HomePage />
             <div
                 

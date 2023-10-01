@@ -17,7 +17,11 @@ import registerHeader from "./registerHeader.png";
 import registerCardIcon from "./registerCard.png"
 import registrationPlaceholder from "./registrationPlaceholder.png"
 import redacted from "./redacted.png"
+import fast from "./fastbg.png"
+import redGradient from "./redGradient.png"
 export {
+    redGradient,
+    fast,
     mindFlayerHeader,
     homeBackground,
     codersCupLogo,
