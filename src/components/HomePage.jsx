@@ -1,6 +1,7 @@
 import { codersCupLogo, homeBackground, hawkingsLogo } from '../assets';
 import { Link } from 'react-router-dom';
 import './homepage.css';
+import Navbar from './Navbar';
 function HomePage() {
     return (
         <>
@@ -15,12 +16,14 @@ function HomePage() {
                     height: '100vh',
                     width: '100vw',
                     backgroundAttachment: 'fixed',
+                    transition: 'all 0.5s ease-in-out',
                 }}
             >
-                <div className="pt-8 flex flex-col justify-center items-center">
-                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-3/5 h-3/5 mt-[-20px] relative z-2 " />
+                <Navbar />
+                <div className="pt-8 flex flex-col justify-center items-center relative ">
+                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-3/5 h-3/5 mt-[30px] relative z-2 " />
                     <p
-                        className="font-normal md:text-l text-white lg:text-[1.5rem] dark:text-white w-6/12 text-center"
+                        className="font-normal max-[400px]:text-xs md:text-l lg:text-[1.5rem] dark:text-white w-6/12 text-center"
                         style={{ fontFamily: 'spotifyMedium' }}
                     >
                         Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM

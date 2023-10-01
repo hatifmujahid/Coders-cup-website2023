@@ -20,8 +20,8 @@ function Navbar() {
     }
     )
     return (
-        <nav class="bg-white border-black dark:bg-black">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <nav class="bg-white border-black dark:bg-black relative">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 relative">
                 <a href="#" class="flex items-center">
                     <img src={acmLogo} class="h-16 w-20 mr-3" alt="acm Logo" />
                 </a>

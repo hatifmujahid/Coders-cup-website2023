@@ -22,11 +22,11 @@ function App() {
             <a id="button" href="#">
                 &#8593;
             </a>
-            <Navbar />
+            
             <HomePage />
             <div
                 
-                className="flex flex-col justify-center items-center duration-10 ease-in-out"
+                className="flex flex-col justify-center items-center duration-10 ease-in-out relative"
                 style={{
                     backgroundImage: `url(${teambackground})`,
                     backgroundSize: 'cover',
@@ -36,13 +36,14 @@ function App() {
                     height: '100vh',
                     width: '100vw',
                     backgroundAttachment: 'fixed',
+                    
                 }}
             >
                 <img src={teamHeader} alt="logo" className="relative mt-[-50px]"></img>
             </div>
             {teamList.map((team, index) => {
                 return (
-                    <div style={{ top: 0, left: 0, height: '100vh', width: '100vw' }}>
+                    <div style={{ top: 0, left: 0, height: '100vh', width: '100vw', position:"relative", transition: 'all 0.5s ease-in-out'}}>
                         <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
                     </div>
                 );
