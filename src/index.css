@@ -20,7 +20,7 @@
   }
 html{
   scroll-snap-type: y proximity;
-  scroll-snap-points-y: repeat(130vh);
+  scroll-snap-points-y: repeat(100vh);
   overflow-x: hidden;
 }
 body {
@@ -31,6 +31,6 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
-  scroll-snap-points-y: repeat(130vh);
+  scroll-snap-points-y: repeat(100vh);
   transition: all 0.5s ease-in-out;
 }
