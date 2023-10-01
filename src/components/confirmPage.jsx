@@ -36,13 +36,13 @@ export default function ConfirmPage() {
             <div className="pt-8 flex flex-col justify-center items-center pb-20">
                 <img src={confirmHeader} alt="confirmdetails" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2" />
                 <p
-                    className="font-normal md:text-l sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
-                    style={{ fontFamily: 'spotifyMedium' }}
+                    className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
+                    style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}
                 >
                     Team Name: <span className="font-bold">{data.teamName}</span>
                 </p>
 
-                <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row relative items-center justify-center ml-5">
+                <div className="flex flex-col  scale-80 lg:scale-100 relative items-center justify-center ml-8">
                     <RegisterCard name={data.leaderName} id={data.leaderId} batch={data.teamBatch} email={data.leaderEmail} />
                     <RegisterCard name={data.mem1Name} id={data.mem1Id} batch={data.teamBatch} email={data.mem1Email} />
                     <RegisterCard name={data.mem2Name} id={data.mem2Id} batch={data.teamBatch} email={data.mem2Email} />
