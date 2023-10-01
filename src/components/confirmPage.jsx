@@ -4,9 +4,10 @@ import { goBackButton, yesButton, homeBackground, confirmHeader } from '../asset
 import Footer from './footer';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 export default function ConfirmPage() {
     const location = useLocation();
+    const navigate = useNavigate();
     const data = location.state.data;
     async function sendingData() {
         
@@ -19,7 +20,12 @@ export default function ConfirmPage() {
                 data: data,
             }),
         }).then((resp) => resp.json());
-        console.log(result)
+        if(result.acknowledged == true){
+            alert("Your response has been recorded")
+            navigate('/');
+        }else{
+            alert("There was some error in submitting your response")
+        }
     }
 
     return (
