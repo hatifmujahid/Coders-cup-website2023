@@ -48,11 +48,31 @@ export default function ConfirmPage() {
                 >
                     Team Name: <span className="font-bold">{data.teamName}</span>
                 </p>
+                <p
+                    className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
+                    style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}
+                >
+                    House Name: <span className="font-bold">{data.teamHouse}</span>
+                </p>
+                <p
+                    className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
+                    style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}
+                >
+                    Contact Information: <span className="font-bold">{data.leaderPhone}</span>
+                </p>
+                <p
+                    className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
+                    style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}
+                >
+                    Batch: <span className="font-bold">{data.teamBatch}</span>
+                </p>
 
                 <div className="flex flex-col  scale-80 lg:scale-100 relative items-center justify-center ml-8">
-                    <RegisterCard name={data.leaderName} id={data.leaderId} batch={data.teamBatch} email={data.leaderEmail} />
-                    <RegisterCard name={data.mem1Name} id={data.mem1Id} batch={data.teamBatch} email={data.mem1Email} />
-                    <RegisterCard name={data.mem2Name} id={data.mem2Id} batch={data.teamBatch} email={data.mem2Email} />
+                    
+                    <RegisterCard name={data.leaderName} id={data.leaderId} email={data.leaderEmail} section={data.leaderSection} />
+                    <RegisterCard name={data.mem1Name} id={data.mem1Id}  email={data.mem1Email} section={data.mem1Section}/>
+                    {data.mem2Name == "" ? null : <RegisterCard name={data.mem2Name} id={data.mem2Id}  email={data.mem2Email} section={data.mem2Section}/>}
+                    
                 </div>
                 <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row relative items-center justify-center ">
                     <Link to={'/register'} state={{data}}>
