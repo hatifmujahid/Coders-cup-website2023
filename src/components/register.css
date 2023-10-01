@@ -14,7 +14,7 @@
     align-items: flex-end;
     color: #000000;
 }
-input {
+input,select {
     box-shadow: 5px 5px rgb(195, 184, 184);
     padding: 8px;
   }

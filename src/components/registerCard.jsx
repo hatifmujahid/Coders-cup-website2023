@@ -11,7 +11,7 @@ export default function RegisterCard(props) {
                 ID: <span className='bg-white pl-2 pr-2 pt-2  md:text-lg text-sm lg:text-lg'>{props.id}</span>
             </p>
             <p className="absolute mt-[70px] scale-90 max-[400px]:scale-[80%] md:text-lg text-sm lg:text-lg">
-                Batch: <span className='bg-white pl-2 pr-2 pt-2  md:text-lg text-sm lg:text-lg'>{props.batch}</span>
+                Section: <span className='bg-white pl-2 pr-2 pt-2  md:text-lg text-sm lg:text-lg'>{props.section}</span>
             </p>
             <p className="ml-2 absolute mt-[135px] max-[400px]:scale-[80%]  md:text-lg text-sm lg:text-lg">
                 Email: <span className='bg-white pl-2 pr-2 pt-2  md:text-lg text-sm lg:text-lg'>{props.email}</span>
