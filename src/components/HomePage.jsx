@@ -31,7 +31,7 @@ function HomePage() {
                     </p>
 
                     <div className='scale-75 lg:scale-90'>
-                        <Link to={'register'}>
+                        <Link to={'register'} state={{}}>
                             <button
                                 id="glow"
                                 style={{ fontFamily: 'spotifyMedium' }}

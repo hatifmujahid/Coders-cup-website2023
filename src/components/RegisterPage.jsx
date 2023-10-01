@@ -2,25 +2,26 @@ import React from 'react';
 import { homeBackground, registrationPlaceholder } from '../assets';
 import Navbar from './Navbar';
 import './register.css';
-import { Link } from 'react-router-dom';
 import { redacted } from '../assets';
 import {useNavigate} from 'react-router-dom';
-
+import { useLocation } from 'react-router-dom';
 export default function Register() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const content = location.state.data ? location.state.data : {};
     const handleSuccess = () => navigate('/register/confirm',{ state: {data: formData} });
     const data = {
-        teamName: '',
-        teamBatch: '',
-        leaderName: '',
-        leaderId: '',
-        leaderEmail: '',
-        mem1Name: '',
-        mem1Id: '',
-        mem1Email: '',
-        mem2Name: '',
-        mem2Id: '',
-        mem2Email: '',
+        teamName: content.teamName ? content.teamName : '',
+        teamBatch: content.teamBatch ? content.teamBatch : '',
+        leaderName: content.leaderName ? content.leaderName : '',
+        leaderId: content.leaderId ? content.leaderId : '',
+        leaderEmail: content.leaderEmail ? content.leaderEmail : '',
+        mem1Name: content.mem1Name ? content.mem1Name : '',
+        mem1Id: content.mem1Id ? content.mem1Id : '',
+        mem1Email: content.mem1Email ? content.mem1Email : '',
+        mem2Name: content.mem2Name ? content.mem2Name : '',
+        mem2Id: content.mem2Id ? content.mem2Id : '',
+        mem2Email: content.mem2Email ? content.mem2Email : '',
     };
     const [errors, setErrors] = React.useState({});
     const [formData, setFormData] = React.useState(data);
@@ -125,7 +126,7 @@ export default function Register() {
                                     Team Name:{' '}
                                 </label>
                                 <div>
-                                    <input name="teamName" onChange={handleChange} type="text" className=" lg:ml-2 h-10" placeholder='Coders'/>
+                                    <input value={formData.teamName} name="teamName" onChange={handleChange} type="text" className=" lg:ml-2 h-10" placeholder='Coders'/>
                                     {errors.teamName && <p className="text-red-500">&nbsp;{errors.teamName}</p>}
                                 </div>
                                 
@@ -133,7 +134,7 @@ export default function Register() {
                                     Batch:{' '}
                                 </label>
                                 <div>
-                                <input required onChange={handleChange}
+                                <input value={formData.teamBatch} required onChange={handleChange}
                                  name="teamBatch"
                                   type="text" className="lg:ml-2 h-10 w-20" placeholder="2020" />
                                 {errors.teamBatch && <p className="text-red-500">&nbsp;{errors.teamBatch}</p>}
@@ -147,7 +148,7 @@ export default function Register() {
                                             Leader Name:&nbsp;&nbsp;&nbsp;{' '}
                                         </label>
                                         <div>
-                                        <input name="leaderName" required onChange={handleChange} type="text" className="lg:ml-2 h-10" />
+                                        <input value={formData.leaderName} name="leaderName" required onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                         {errors.leaderName && <p className="text-red-500">&nbsp;{errors.leaderName}</p>}
                                         </div>
                                     </div>
@@ -157,6 +158,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.leaderId}
                                             name="leaderId"
                                             onChange={handleChange}
                                             type="text"
@@ -173,6 +175,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.leaderEmail}
                                         name="leaderEmail" required onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                        {errors.leaderEmail && <p className="text-red-500">&nbsp;{errors.leaderEmail}</p>}
                                         </div>
@@ -189,6 +192,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem1Name}
                                         name= "mem1Name" onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                         {errors.mem1Name && <p className="text-red-500">&nbsp;{errors.mem1Name}</p>}
                                         </div>
@@ -199,6 +203,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem1Id}
                                         name="mem1Id"
                                             onChange={handleChange}
                                             type="text"
@@ -215,6 +220,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem1Email}
                                         name="mem1Email" onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                         {errors.mem1Email && <p className="text-red-500">&nbsp;{errors.mem1Email}</p>}
                                         </div>
@@ -231,6 +237,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem2Name}
                                         name="mem2Name" onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                         {errors.mem2Name && <p className="text-red-500">&nbsp;{errors.mem2Name}</p>}
                                         </div>
@@ -241,6 +248,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem2Id}
                                         name="mem2Id"
                                             onChange={handleChange}
                                             type="text"
@@ -257,6 +265,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        value={formData.mem2Email}
                                         name="mem2Email" onChange={handleChange} type="text" className="lg:ml-2 h-10" />
                                        {errors.mem2Email && <p className="text-red-500">&nbsp;{errors.mem2Email}</p>}
                                         </div>

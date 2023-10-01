@@ -8,10 +8,6 @@ import { useEffect } from 'react';
 export default function ConfirmPage() {
     const location = useLocation();
     const data = location.state.data;
-    useEffect(() => {   
-        console.log(location);
-
-    })
     async function sendingData() {
         
         await fetch(`http://localhost:5000/submit`, {
@@ -52,7 +48,7 @@ export default function ConfirmPage() {
                     <RegisterCard name={data.mem2Name} id={data.mem2Id} batch={data.teamBatch} email={data.mem2Email} />
                 </div>
                 <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row relative items-center justify-center ">
-                    <Link to={'/register'}>
+                    <Link to={'/register'} state={{data}}>
                         <img
                             src={goBackButton}
                             alt="goBack"
