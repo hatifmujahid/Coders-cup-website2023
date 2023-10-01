@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import { goBackButton, yesButton, homeBackground, confirmHeader } from '../assets';
 import Footer from './footer';
 import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function ConfirmPage() {
     const location = useLocation();
     const data = location.state.data;
+    useEffect(() => {   
+        console.log(location);
 
+    })
     async function sendingData() {
         
         await fetch(`http://localhost:5000/submit`, {

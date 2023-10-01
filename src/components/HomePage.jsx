@@ -30,12 +30,12 @@ function HomePage() {
                         NUCES, are now open. In a world where coding meets the upside down, join us if you dare!
                     </p>
 
-                    <div className='min-[300px]:scale-75'>
+                    <div className='scale-75 lg:scale-90'>
                         <Link to={'register'}>
                             <button
                                 id="glow"
                                 style={{ fontFamily: 'spotifyMedium' }}
-                                className=" hover:scale-105 z-2 mt-16 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"
+                                className=" hover:scale-105 z-2 mt-8 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"
                             >
                                 {' '}
                                 Register Today
