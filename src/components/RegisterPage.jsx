@@ -6,7 +6,7 @@ import { redacted } from '../assets';
 import {useNavigate} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 export default function Register() {
-    // section, phone
+    
     const navigate = useNavigate();
     const location = useLocation();
     const content = location.state.data ? location.state.data : {};
@@ -14,19 +14,22 @@ export default function Register() {
     const data = {
         teamName: content.teamName ? content.teamName : '',
         teamHouse: content.teamHouse ? content.teamHouse : 'Hawkings Hounds',
-        teamBatch: content.teamBatch ? content.teamBatch : '',
+        teamBatch: content.teamBatch ? content.teamBatch : '2023',
         leaderName: content.leaderName ? content.leaderName : '',
         leaderId: content.leaderId ? content.leaderId : '',
         leaderEmail: content.leaderEmail ? content.leaderEmail : '',
         leaderSection: content.leaderSection ? content.leaderSection : '',
         leaderPhone: content.leaderPhone ? content.leaderPhone : '',
+        leaderDepartment: content.leaderDepartment ? content.leaderDepartment : 'CS',
         mem1Name: content.mem1Name ? content.mem1Name : '',
         mem1Id: content.mem1Id ? content.mem1Id : '',
         mem1Section: content.mem1Section ? content.mem1Section : '',
+        mem1Department: content.mem1Department ? content.mem1Department : 'CS',
         mem1Email: content.mem1Email ? content.mem1Email : '',
         mem2Name: content.mem2Name ? content.mem2Name : '',
         mem2Id: content.mem2Id ? content.mem2Id : '',
         mem2Section: content.mem2Section ? content.mem2Section : '',
+        mem2Department: content.mem2Department ? content.mem2Department : 'CS',
         mem2Email: content.mem2Email ? content.mem2Email : '',
     };
     const [errors, setErrors] = React.useState({});
@@ -47,10 +50,6 @@ export default function Register() {
         }
         if (formData.teamBatch === '') {
             validationErrors.teamBatch = 'Team Batch is required';
-        }else if(formData.teamBatch.length !== 4){
-            validationErrors.teamBatch = 'Batch should be 4 characters long';
-        }else if(formData.teamBatch > 2023 || formData.teamBatch < 2018){
-            validationErrors.teamBatch = 'Batch should be between 2018 and 2023';
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
@@ -71,6 +70,9 @@ export default function Register() {
         }else if(/^[plick]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
             validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
         }
+        if(formData.leaderDepartment === ''){
+            validationErrors.leaderDepartment = 'Leader Department is required';
+        }
         if (formData.leaderId.length !== 7) {
             validationErrors.leaderId = 'ID should be 7 characters';
         }
@@ -83,6 +85,9 @@ export default function Register() {
         if (formData.mem1Id.length !== 7) {
             validationErrors.mem1Id = 'ID should be 7 characters';
         }
+        if(formData.mem1Department === ''){
+            validationErrors.mem1Department = 'Member 1 Department is required';
+        }
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
         }else if(/^[plick]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
@@ -91,7 +96,7 @@ export default function Register() {
         if(formData.mem1Section === ''){
             validationErrors.mem1Section = 'Member 1 Section is required';
         }
-        if (formData.mem2Name !== '' || formData.mem2Id !== '' || formData.mem2Email !== '' || formData.mem2Section !== '') {
+        if (formData.mem2Name !== '' || formData.mem2Id !== '' || formData.mem2Email !== '' || formData.mem2Section !== '' || formData.mem2Department !== '') {
             if (formData.mem2Name === '') {
                 validationErrors.mem2Name = 'Member 2 Name is required';
             }
@@ -103,6 +108,9 @@ export default function Register() {
             }
             if (formData.mem2Id.length !== 7) {
                 validationErrors.mem2Id = 'ID should be 7 characters';
+            }
+            if(formData.mem2Department === ''){
+                validationErrors.mem2Department = 'Member 2 Department is required';
             }
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
@@ -165,9 +173,14 @@ export default function Register() {
                                     Batch:{' '}
                                 </label>
                                 <div>
-                                <input value={formData.teamBatch} required onChange={handleChange}
-                                 name="teamBatch"
-                                  type="text" className="lg:ml-2 h-10 w-20 border border-solid-2px border-black" placeholder="2020" />
+                                <select name="teamBatch" value={formData.teamBatch} onChange={handleChange} className="lg:ml-2 h-10 w-50 border border-solid-2px border-black" >
+                                    <option value="2023">2023</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                </select>
                                 {errors.teamBatch && <p className=" text-red-500">&nbsp;{errors.teamBatch}</p>}
                                 </div>
                             </div>
@@ -179,7 +192,7 @@ export default function Register() {
                                             Leader Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{' '}
                                         </label>
                                         <div>
-                                        <input value={formData.leaderName} name="leaderName" required onChange={handleChange} type="text" className="border border-solid-2px border-black lg:ml-2 h-10" />
+                                        <input placeholder='mike' value={formData.leaderName} name="leaderName" required onChange={handleChange} type="text" className="border border-solid-2px border-black lg:ml-2 h-10" />
                                         {errors.leaderName && <p className="text-red-500">&nbsp;{errors.leaderName}</p>}
                                         </div>
                                     </div>
@@ -194,7 +207,7 @@ export default function Register() {
                                             onChange={handleChange}
                                             type="text"
                                             className="lg:ml-2 h-10 border border-solid-2px border-black"
-                                            placeholder="k201234"
+                                            placeholder="k20xxxx"
                                             maxLength={7}
                                         />
                                         {errors.leaderId && <p className="text-red-500">&nbsp;{errors.leaderId}</p>}
@@ -206,6 +219,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='k20xxxx@nu.edu.pk'
                                         value={formData.leaderEmail}
                                         name="leaderEmail" required onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                        {errors.leaderEmail && <p className="text-red-500">&nbsp;{errors.leaderEmail}</p>}
@@ -217,9 +231,27 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='BCS-7E'
                                         value={formData.leaderSection}
                                         name="leaderSection" required onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                        {errors.leaderSection && <p className="text-red-500">&nbsp;{errors.leaderSection}</p>}
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
+                                        <label className="mt-2 lg:text-2xl md:text-xl sm:text-base" style={{ fontFamily: 'anonymousPro' }}>
+                                            Lead Department:&nbsp;{' '}
+                                        </label>
+                                        <div>
+                                        <select name="leaderDepartment" value={formData.leaderDepartment} onChange={handleChange} className="lg:ml-2 h-10 w-50 border border-solid-2px border-black" >
+                                    <option value="CS">CS</option>
+                                    <option value="SE">SE</option>
+                                    <option value="AI">AI</option>
+                                    <option value="CYS">CYS</option>
+                                    <option value="BA">BA</option>
+                                    <option value="EE">EE</option>
+                                    <option value="FT">FT</option>
+                                </select>
+                                       {errors.leaderDepartment && <p className="text-red-500">&nbsp;{errors.leaderDepartment}</p>}
                                         </div>
                                     </div>
                                     <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
@@ -228,6 +260,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='0333xxxxxxx'
                                         value={formData.leaderPhone}
                                         name="leaderPhone" required onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                        {errors.leaderPhone && <p className="text-red-500">&nbsp;{errors.leaderPhone}</p>}
@@ -245,6 +278,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='steve'
                                         value={formData.mem1Name}
                                         name= "mem1Name" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                         {errors.mem1Name && <p className="text-red-500">&nbsp;{errors.mem1Name}</p>}
@@ -273,6 +307,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='k20xxxx@nu.edu.pk'
                                         value={formData.mem1Email}
                                         name="mem1Email" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                         {errors.mem1Email && <p className="text-red-500">&nbsp;{errors.mem1Email}</p>}
@@ -284,9 +319,27 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='BCS-7E'
                                         value={formData.mem1Section}
                                         name="mem1Section" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                         {errors.mem1Section && <p className="text-red-500">&nbsp;{errors.mem1Section}</p>}
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
+                                        <label className="mt-2 lg:text-2xl md:text-xl sm:text-base" style={{ fontFamily: 'anonymousPro' }}>
+                                            Mem 1 Department:{' '}
+                                        </label>
+                                        <div>
+                                        <select name="mem1Department" value={formData.mem1Department} onChange={handleChange} className="lg:ml-2 h-10 w-50 border border-solid-2px border-black" >
+                                    <option value="CS">CS</option>
+                                    <option value="SE">SE</option>
+                                    <option value="AI">AI</option>
+                                    <option value="CYS">CYS</option>
+                                    <option value="BA">BA</option>
+                                    <option value="EE">EE</option>
+                                    <option value="FT">FT</option>
+                                </select>
+                                       {errors.mem1Department && <p className="text-red-500">&nbsp;{errors.mem1Department}</p>}
                                         </div>
                                     </div>
                                 </div>
@@ -301,6 +354,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='robin'
                                         value={formData.mem2Name}
                                         name="mem2Name" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                         {errors.mem2Name && <p className="text-red-500">&nbsp;{errors.mem2Name}</p>}
@@ -317,7 +371,7 @@ export default function Register() {
                                             onChange={handleChange}
                                             type="text"
                                             className="lg:ml-2 h-10 border border-solid-2px border-black"
-                                            placeholder="k201234"
+                                            placeholder="k20xxxx"
                                             maxLength={7}
                                         />
                                         {errors.mem2Id && <p className="text-red-500">&nbsp;{errors.mem2Id}</p>}
@@ -329,6 +383,7 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='k20xxxx@nu.edu.pk'
                                         value={formData.mem2Email}
                                         name="mem2Email" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                        {errors.mem2Email && <p className="text-red-500">&nbsp;{errors.mem2Email}</p>}
@@ -340,9 +395,27 @@ export default function Register() {
                                         </label>
                                         <div>
                                         <input
+                                        placeholder='BCS-7E'
                                         value={formData.mem2Section}
                                         name="mem2Section" onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
                                        {errors.mem2Section && <p className="text-red-500">&nbsp;{errors.mem2Section}</p>}
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-2 lg:ml-16">
+                                        <label className="mt-2 lg:text-2xl md:text-xl sm:text-base" style={{ fontFamily: 'anonymousPro' }}>
+                                            Mem 2 Department:{' '}
+                                        </label>
+                                        <div>
+                                        <select name="mem2Department" value={formData.mem2Department} onChange={handleChange} className="lg:ml-2 h-10 w-50 border border-solid-2px border-black" >
+                                    <option value="CS">CS</option>
+                                    <option value="SE">SE</option>
+                                    <option value="AI">AI</option>
+                                    <option value="CYS">CYS</option>
+                                    <option value="BA">BA</option>
+                                    <option value="EE">EE</option>
+                                    <option value="FT">FT</option>
+                                </select>
+                                       {errors.mem2Department && <p className="text-red-500">&nbsp;{errors.mem2Department}</p>}
                                         </div>
                                     </div>
                                 </div>
