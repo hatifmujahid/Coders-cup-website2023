@@ -9,6 +9,7 @@ export default function ConfirmPage() {
     const data = location.state.data;
 
     async function sendingData() {
+        
         await fetch(`http://localhost:5000/submit`, {
             method: 'POST',
             headers: {
@@ -59,6 +60,7 @@ export default function ConfirmPage() {
                         alt="yes button"
                         className="scale-[50%] z-10 hover:cursor-pointer hover:scale-[60%] transition"
                         onClick={sendingData}
+                        
                     />
                 </div>
             </div>

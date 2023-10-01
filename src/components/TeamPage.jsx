@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 function TeamPage({ backgroundImageUrl, teamNameImage, description }) {
     return (
         <div
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center relative"
             style={{
                 backgroundImage: `url(${backgroundImageUrl})`,
                 backgroundSize: 'cover',
