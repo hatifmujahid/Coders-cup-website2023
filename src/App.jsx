@@ -26,7 +26,7 @@ function App() {
             <HomePage />
             <div
                 
-                className="flex flex-col justify-center items-center duration-10 ease-in-out relative"
+                className="flex flex-col justify-center items-center duration-10 ease-in-out relative snap-start"
                 style={{
                     backgroundImage: `url(${teambackground})`,
                     backgroundSize: 'cover',
@@ -43,7 +43,7 @@ function App() {
             </div>
             {teamList.map((team, index) => {
                 return (
-                    <div style={{ top: 0, left: 0, height: '100vh', width: '100vw', position:"relative", transition: 'all 0.5s ease-in-out'}}>
+                    <div className='snap-start' style={{ top: 0, left: 0, height: '100vh', width: '100vw', position:"relative", transition: 'all 0.5s ease-in-out'}}>
                         <TeamPage backgroundImageUrl={team.backgroundImage} teamNameImage={team.headerImage} description={team.description} />
                     </div>
                 );
