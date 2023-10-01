@@ -29,7 +29,7 @@ export default function Register() {
         mem2Name: content.mem2Name ? content.mem2Name : '',
         mem2Id: content.mem2Id ? content.mem2Id : '',
         mem2Section: content.mem2Section ? content.mem2Section : '',
-        mem2Department: content.mem2Department ? content.mem2Department : 'CS',
+        mem2Department: content.mem2Department ? content.mem2Department : '',
         mem2Email: content.mem2Email ? content.mem2Email : '',
     };
     const [errors, setErrors] = React.useState({});
@@ -47,9 +47,6 @@ export default function Register() {
         const validationErrors = {};
         if (formData.teamName === '') {
             validationErrors.teamName = 'Team Name is required';
-        }
-        if (formData.teamBatch === '') {
-            validationErrors.teamBatch = 'Team Batch is required';
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
@@ -96,7 +93,7 @@ export default function Register() {
         if(formData.mem1Section === ''){
             validationErrors.mem1Section = 'Member 1 Section is required';
         }
-        if (formData.mem2Name !== '' || formData.mem2Id !== '' || formData.mem2Email !== '' || formData.mem2Section !== '' || formData.mem2Department !== '') {
+        if (formData.mem2Name !== '' || formData.mem2Id !== '' || formData.mem2Email !== '' || formData.mem2Section !== '') {
             if (formData.mem2Name === '') {
                 validationErrors.mem2Name = 'Member 2 Name is required';
             }

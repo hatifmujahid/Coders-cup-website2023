@@ -71,7 +71,8 @@ export default function ConfirmPage() {
                     
                     <RegisterCard name={data.leaderName} id={data.leaderId} email={data.leaderEmail} section={data.leaderSection} />
                     <RegisterCard name={data.mem1Name} id={data.mem1Id}  email={data.mem1Email} section={data.mem1Section}/>
-                    <RegisterCard name={data.mem2Name} id={data.mem2Id}  email={data.mem2Email} section={data.mem2Section}/>
+                    {data.mem2Name == "" ? null : <RegisterCard name={data.mem2Name} id={data.mem2Id}  email={data.mem2Email} section={data.mem2Section}/>}
+                    
                 </div>
                 <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row relative items-center justify-center ">
                     <Link to={'/register'} state={{data}}>
