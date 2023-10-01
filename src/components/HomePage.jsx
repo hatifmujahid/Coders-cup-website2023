@@ -6,7 +6,7 @@ function HomePage() {
     return (
         <>
             <div
-                className="homeimg"
+                className="homeimg snap-start"
                 style={{
                     backgroundImage: `url(${homeBackground})`,
                     backgroundSize: 'cover',
@@ -17,6 +17,7 @@ function HomePage() {
                     width: '100vw',
                     backgroundAttachment: 'fixed',
                     transition: 'all 0.5s ease-in-out',
+                    
                 }}
             >
                 <Navbar />

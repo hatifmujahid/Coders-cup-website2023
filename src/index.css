@@ -19,7 +19,9 @@
     background-color: #a8bbbf;
   }
 html{
-  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y proximity;
   overflow-x: hidden;
 }
 body {
@@ -29,4 +31,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(30vh);
+  scroll-snap-type: y proximity;
 }
