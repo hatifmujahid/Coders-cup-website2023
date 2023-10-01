@@ -43,6 +43,8 @@ export default function Register() {
             validationErrors.teamBatch = 'Team Batch is required';
         }else if(formData.teamBatch.length !== 4){
             validationErrors.teamBatch = 'Batch should be 4 characters long';
+        }else if(formData.teamBatch > 2023 || formData.teamBatch < 2018){
+            validationErrors.teamBatch = 'Batch should be between 2018 and 2023';
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
