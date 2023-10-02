@@ -20,7 +20,7 @@ function Navbar() {
     }
     )
     return (
-        <nav class="bg-black border-black dark:bg-black relative">
+        <nav class="bg-black border-black dark:bg-black relative transition">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 relative">
                 <a href="https://www.acmcoderscup.online/" class="flex items-center">
                     <img src={acmLogo} class="h-16 w-20 mr-3" alt="acm Logo" />
@@ -48,7 +48,7 @@ function Navbar() {
                             <Link to={'/'}>
                                 <p
                                     href="/"
-                                    class="home-btn block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    class="home-btn block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                     aria-current="page"
                                     
                                 >
@@ -59,7 +59,7 @@ function Navbar() {
                         <li>
                             <Link to={'/register'} state={{}}>
                                 <p
-                                    class="register-btn block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                                    class="register-btn block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                                 >
                                     Register
                                 </p>
