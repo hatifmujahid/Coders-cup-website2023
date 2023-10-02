@@ -33,4 +33,5 @@ body {
   scroll-snap-type: y mandatory;
   scroll-snap-points-y: repeat(100vh);
   transition: all 0.5s ease-in-out;
+  scroll-behavior: smooth;
 }
