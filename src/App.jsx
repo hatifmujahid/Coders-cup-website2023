@@ -21,7 +21,6 @@ function App() {
         <>  
             <HomePage />
             <div
-                
                 className="flex flex-col justify-center items-center duration-10 ease-in-out relative snap-start"
                 style={{
                     backgroundImage: `url(${teambackground})`,
