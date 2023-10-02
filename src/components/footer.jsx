@@ -12,7 +12,7 @@ export default function Footer() {
             transition: 'all 0.5s ease-in-out'
         }}>
 
-            <footer class="bg-transparent">
+            <footer class="bg-transparent pt-3">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
                         <div class="mb-6 md:mb-0">
@@ -26,10 +26,10 @@ export default function Footer() {
                                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Our Events</h2>
                                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                                     <li class="mb-4">
-                                        <p class="hover:underline">Coders Cup</p>
+                                        <p>Coders Cup</p>
                                     </li>
                                     <li>
-                                        <p class="hover:underline">Developers Day</p>
+                                        <p>Developers Day</p>
                                     </li>
                                 </ul>
                             </div>
