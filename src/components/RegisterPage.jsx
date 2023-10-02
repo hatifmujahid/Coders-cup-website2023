@@ -259,7 +259,7 @@ export default function Register() {
                                         <input
                                         placeholder='0333xxxxxxx'
                                         value={formData.leaderPhone}
-                                        name="leaderPhone" required onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" />
+                                        name="leaderPhone" required onChange={handleChange} type="text" className="lg:ml-2 h-10 border border-solid-2px border-black" maxLength={11}/>
                                        {errors.leaderPhone && <p className="text-red-500">&nbsp;{errors.leaderPhone}</p>}
                                         </div>
                                     </div>
