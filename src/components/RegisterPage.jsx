@@ -127,7 +127,7 @@ export default function Register() {
         <>
             <Navbar />
             <div
-                className="homeimg"
+                className="homeimg transition"
                 style={{
                     backgroundImage: `url(${homeBackground})`,
                     backgroundSize: 'cover',
@@ -136,6 +136,7 @@ export default function Register() {
                     position: 'relative',
                     backgroundAttachment: 'fixed',
                 }}
+
             >
                 <div className="pt-8 flex flex-col justify-center items-center z-1 pb-40 scale-90">
                     <div
