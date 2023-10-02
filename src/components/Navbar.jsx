@@ -22,7 +22,7 @@ function Navbar() {
     return (
         <nav class="bg-black border-black dark:bg-black relative">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 relative">
-                <a href="#" class="flex items-center">
+                <a href="https://www.acmcoderscup.online/" class="flex items-center">
                     <img src={acmLogo} class="h-16 w-20 mr-3" alt="acm Logo" />
                 </a>
                 <button
@@ -43,7 +43,7 @@ function Navbar() {
                     class="hidden w-full md:block md:w-auto"
                     id="navbar-default"
                 >
-                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-gray-700">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-black md:dark:bg-black dark:border-gray-700">
                         <li>
                             <Link to={'/'}>
                                 <p
