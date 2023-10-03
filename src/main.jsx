@@ -8,6 +8,9 @@ import {
 } from "react-router-dom"
 import Register from './components/RegisterPage'
 import Confirm from './components/confirmPage'
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 const BrowserRouter = createBrowserRouter([
   {
