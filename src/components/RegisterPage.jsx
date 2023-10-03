@@ -55,6 +55,9 @@ export default function Register() {
         if (formData.leaderId === '') {
             validationErrors.leaderId = 'Leader ID is required';
         }
+        else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.test(formData.leaderId) === false){
+            validationErrors.leaderId = 'Please enter a valid ID';
+        }
         if(formData.leaderSection === ''){
             validationErrors.leaderSection = 'Leader Section is required';
         }
@@ -80,8 +83,8 @@ export default function Register() {
         if (formData.mem1Id === '') {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
-        if (formData.mem1Id.length !== 7) {
-            validationErrors.mem1Id = 'ID should be 7 characters';
+        else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.test(formData.mem1Id) === false){
+            validationErrors.mem1Id = 'Please enter a valid ID';
         }
         if(formData.mem1Department === ''){
             validationErrors.mem1Department = 'Member 1 Department is required';
@@ -104,8 +107,8 @@ export default function Register() {
             if (formData.mem2Id === '') {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
-            if (formData.mem2Id.length !== 7) {
-                validationErrors.mem2Id = 'ID should be 7 characters';
+            else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.exec(formData.mem2Id) === false){
+                validationErrors.mem2Id = 'Please enter a valid ID';
             }
             if(formData.mem2Department === ''){
                 validationErrors.mem2Department = 'Member 2 Department is required';
