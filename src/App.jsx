@@ -17,15 +17,23 @@ import Footer from './components/footer';
 import { useEffect, useState } from 'react'; 
 
 function App() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(null);
+
+    window.addEventListener('loadstart', () => {
+        setLoading(true);
+    });
+
+    window.addEventListener('load', () => {
+        setLoading(false);
+    });
 
     return (
         <>
-            {/* <div style={{display: loading ? 'block' : 'none'}} className='transition'>
+            <div style={{display: loading ? 'block' : 'none'}} className='transition'>
                 <div className="h-screen w-screen flex justify-center items-center">
                     <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-red-700 "></div>
                 </div>
-            </div> */}
+            </div>
             <div style={{ display: loading ? 'none' : 'block' }} className='transition'>
                 <HomePage />
                 <div
