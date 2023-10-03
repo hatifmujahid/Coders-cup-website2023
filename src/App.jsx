@@ -14,25 +14,19 @@ import teambackground from './assets/teamBackground.jpg';
 import teamHeader from './assets/teamHeader.png';
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'; 
 
 function App() {
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        window.addEventListener('load', () => {
-            setLoading(false);
-        });
-    });
+    const [loading, setLoading] = useState(false);
 
     return (
         <>
-            <div style={{display: loading ? 'block' : 'none'}}>
+            {/* <div style={{display: loading ? 'block' : 'none'}} className='transition'>
                 <div className="h-screen w-screen flex justify-center items-center">
                     <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-red-700 "></div>
                 </div>
-            </div>
-            <div style={{ display: loading ? 'none' : 'block' }}>
+            </div> */}
+            <div style={{ display: loading ? 'none' : 'block' }} className='transition'>
                 <HomePage />
                 <div
                     className="flex flex-col justify-center items-center duration-10 ease-in-out relative snap-start transition"
