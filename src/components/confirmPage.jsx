@@ -21,7 +21,7 @@ export default function ConfirmPage() {
             }),
         }).then((resp) => resp.json());
         if(result.acknowledged == true){
-            alert("Your response has been recorded")
+            alert("Your Details have been added. Please check your email for further details")
             navigate('/');
         }else{
             alert("There was some error in submitting your response")
