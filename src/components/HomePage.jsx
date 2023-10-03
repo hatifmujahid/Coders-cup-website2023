@@ -31,7 +31,7 @@ function HomePage() {
                         NUCES, are now open. In a world where coding meets the upside down, join us if you dare!
                     </p>
 
-                    <div className='scale-75 lg:scale-90'>
+                    <div className='scale-75 lg:scale-[85%]'>
                         <Link to={'register'} state={{}}>
                             <button
                                 id="glow"
