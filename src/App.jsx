@@ -18,26 +18,7 @@ import { useEffect, useState } from 'react';
 import { render } from 'react-dom';
 
 function App() {
-    const [isLoading, setLoading] = useState(null);
-
-    function someRequest() {
-        //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-        return new Promise((resolve) => setTimeout(() => resolve(), 2500));
-    }
-
-    useEffect(() => {
-        someRequest().then(() => {
-            const loaderElement = document.querySelector('.loader-container');
-            if (loaderElement) {
-                loaderElement.remove();
-                setLoading(!isLoading);
-            }
-        });
-    });
-    if (isLoading) {
-        //
-        return null;
-    }
+    
     return (
         <div style={{}} className="transition">
             <HomePage />
