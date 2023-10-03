@@ -9,6 +9,7 @@ import {
 import Register from './components/RegisterPage'
 import Confirm from './components/confirmPage'
 import { inject } from '@vercel/analytics';
+import AboutPage from './components/aboutPage'
  
 inject();
 
@@ -24,6 +25,10 @@ const BrowserRouter = createBrowserRouter([
   {
     path: "register/confirm",
     element: <Confirm />,
+  },
+  {
+    path:'/about',
+    element: <AboutPage />,
   }
 ]);
 
