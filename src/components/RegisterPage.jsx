@@ -55,7 +55,7 @@ export default function Register() {
         if (formData.leaderId === '') {
             validationErrors.leaderId = 'Leader ID is required';
         }
-        else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.test(formData.leaderId) === false){
+        else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.test(formData.leaderId) === false){
             validationErrors.leaderId = 'Please enter a valid ID';
         }
         if(formData.leaderSection === ''){
@@ -83,7 +83,7 @@ export default function Register() {
         if (formData.mem1Id === '') {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
-        else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.test(formData.mem1Id) === false){
+        else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.test(formData.mem1Id) === false){
             validationErrors.mem1Id = 'Please enter a valid ID';
         }
         if(formData.mem1Department === ''){
@@ -107,7 +107,7 @@ export default function Register() {
             if (formData.mem2Id === '') {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
-            else if(/^[plick](?:20|21|22|23|19|18)\d{4}$/.exec(formData.mem2Id) === false){
+            else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.exec(formData.mem2Id) === false){
                 validationErrors.mem2Id = 'Please enter a valid ID';
             }
             if(formData.mem2Department === ''){
@@ -209,7 +209,7 @@ export default function Register() {
                                             onChange={handleChange}
                                             type="text"
                                             className="lg:ml-2 h-10 border border-solid-2px border-black"
-                                            placeholder="k20xxxx"
+                                            placeholder="20Kxxxx"
                                             maxLength={7}
                                         />
                                         {errors.leaderId && <p className="text-red-500">&nbsp;{errors.leaderId}</p>}
@@ -297,7 +297,7 @@ export default function Register() {
                                             onChange={handleChange}
                                             type="text"
                                             className="lg:ml-2 h-10 border border-solid-2px border-black"
-                                            placeholder="k20xxxx"
+                                            placeholder="20Kxxxx"
                                             maxLength={7}
                                         />
                                         {errors.mem1Id && <p className="text-red-500">&nbsp;{errors.mem1Id}</p>}
@@ -373,7 +373,7 @@ export default function Register() {
                                             onChange={handleChange}
                                             type="text"
                                             className="lg:ml-2 h-10 border border-solid-2px border-black"
-                                            placeholder="k20xxxx"
+                                            placeholder="20Kxxxx"
                                             maxLength={7}
                                         />
                                         {errors.mem2Id && <p className="text-red-500">&nbsp;{errors.mem2Id}</p>}
