@@ -30,6 +30,7 @@ function HomePage() {
         <>
             {loading && (
                 <div
+                    className='transition'
                     style={{
                         position: 'fixed',
                         top: 0,
@@ -49,7 +50,7 @@ function HomePage() {
                 </div>
             )}
             <div
-                className="homeimg snap-start"
+                className="homeimg snap-start transition"
                 style={{
                     backgroundImage: `url(${homeBackground})`,
                     backgroundSize: 'cover',
