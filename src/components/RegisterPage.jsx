@@ -148,7 +148,7 @@ export default function Register() {
                         className="p-10 mt-[5%] border-4 border-dashed border-gray-800 w-[80%] h-[80%] z-2"
                     >
                         <p className="text-black md:text-2xl text-l lg:text-5xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                            Coder's Cup - Sign Up Today!
+                            Coders Cup - Sign Up Today!
                         </p>
                         <p className="text-black md:text-xl text-md lg:text-xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
                             A Minimum of 2 and a Maximum of 3 Members are allowed to form a team.
@@ -440,7 +440,7 @@ export default function Register() {
                         </div>
                         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                             <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Our Events</h2>
+                                <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Our Events</h2>
                                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                                     <li class="mb-4">
                                         <p>Coders Cup</p>
@@ -451,7 +451,7 @@ export default function Register() {
                                 </ul>
                             </div>
                             <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us</h2>
+                                <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Follow us</h2>
                                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                                     <li class="mb-4">
                                         <a href="https://www.instagram.com/acmnuces/?hl=en" target="_blank" class="hover:underline ">Instagram</a>
@@ -462,7 +462,7 @@ export default function Register() {
                                 </ul>
                             </div>
                             <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Meet the Developers</h2>
+                                <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Meet the Developers</h2>
                                 <ul class="text-gray-500 dark:text-gray-400 font-medium">
                                     <li class="mb-4">
                                         <a href="https://www.linkedin.com/in/muhammad-hatif/" target="_blank" class="hover:underline">Hatif Mujahid</a>
