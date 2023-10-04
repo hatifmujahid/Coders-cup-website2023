@@ -5,12 +5,15 @@ import Footer from './footer';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import React from 'react';
 export default function ConfirmPage() {
     const location = useLocation();
     const navigate = useNavigate();
+    const [submitted, setSubmitted] = React.useState(false);
     const data = location.state.data;
     async function sendingData() {
-        
+        if(!submitted){
+        setSubmitted(true)
         const result = await fetch(`https://coders-cup-db-private.vercel.app/submit`, {
             method: 'POST',
             headers: {
@@ -25,6 +28,7 @@ export default function ConfirmPage() {
             navigate('/');
         }else{
             alert("There was some error in submitting your response")
+        }
         }
     }
 
