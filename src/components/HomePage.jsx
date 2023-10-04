@@ -2,9 +2,52 @@ import { codersCupLogo, homeBackground, hawkingsLogo } from '../assets';
 import { Link } from 'react-router-dom';
 import './homepage.css';
 import Navbar from './Navbar';
+import { useState, useEffect } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 function HomePage() {
+    const [loading, setLoading] = useState(true);
+    const [progress, setProgress] = useState(0);
+
+    const [startTime, setStartTime] = useState(Date.now());
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const elapsedTime = Date.now() - startTime;
+            const progress = Math.min(Math.floor((elapsedTime / 5000) * 100), 100);
+            setProgress(progress);
+            if (progress >= 100) {
+                clearInterval(interval);
+                setLoading(false);
+            }
+        }, 80);
+
+        return () => clearInterval(interval);
+    }, [startTime]);
+
     return (
         <>
+            {loading && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        height: '100vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: 'black',
+                        zIndex: 9999,
+                    }}
+                >
+                    <div style={{ width: '10vw', height: '10vh' }}>
+                        <CircularProgressbar value={progress} text={`${progress}%`} styles={{ path: { stroke: 'red' } }} />
+                    </div>
+                </div>
+            )}
             <div
                 className="homeimg snap-start"
                 style={{
@@ -17,13 +60,12 @@ function HomePage() {
                     width: '100vw',
                     backgroundAttachment: 'fixed',
                     transition: 'all 0.5s ease-in-out',
-                    
                 }}
             >
                 <Navbar />
-                
+
                 <div className="pt-8 flex flex-col justify-center items-center relative ">
-                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 " />
+                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 "/>
                     <p
                         className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-6/12 text-center"
                         style={{ fontFamily: 'spotifyMedium' }}
@@ -32,7 +74,7 @@ function HomePage() {
                         NUCES, are now open. In a world where coding meets the upside down, join us if you dare!
                     </p>
 
-                    <div className='scale-75 lg:scale-[85%]'>
+                    <div className="scale-75 lg:scale-[85%]">
                         <Link to={'register'} state={{}}>
                             <button
                                 id="glow"
@@ -43,11 +85,12 @@ function HomePage() {
                                 Register Today
                             </button>
                         </Link>
-                        <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10" />
+                        <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10"/>
                     </div>
                 </div>
             </div>
         </>
     );
 }
+
 export default HomePage;
