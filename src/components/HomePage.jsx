@@ -65,7 +65,7 @@ function HomePage() {
                 <Navbar />
 
                 <div className="pt-8 flex flex-col justify-center items-center relative ">
-                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 "/>
+                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 " loading='eager'/>
                     <p
                         className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-6/12 text-center"
                         style={{ fontFamily: 'spotifyMedium' }}
@@ -85,7 +85,7 @@ function HomePage() {
                                 Register Today
                             </button>
                         </Link>
-                        <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10"/>
+                        <img src={hawkingsLogo} alt="logo" className="relative mt-[-50%] w-[50%] ml-[80%] z-10" loading='eager'/>
                     </div>
                 </div>
             </div>
