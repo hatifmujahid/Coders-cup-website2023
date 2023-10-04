@@ -21,6 +21,7 @@ function HomePage() {
                 }}
             >
                 <Navbar />
+                
                 <div className="pt-8 flex flex-col justify-center items-center relative ">
                     <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 " />
                     <p
