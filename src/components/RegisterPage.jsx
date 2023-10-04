@@ -42,12 +42,50 @@ export default function Register() {
             [name]: value
         })
     }
-    const handleSubmit = (e) => {
+    async function idCheck (id){
+        const response = await fetch(`https://coders-cup-db-private.vercel.app/id`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id
+            }),
+        });
+        
+        const result = await response.json();
+        return result;
+    }     
+    async function teamCheck (team){
+        const response = await fetch(`https://coders-cup-db-private.vercel.app/team`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                team: team
+            }),
+        });
+
+        const result = await response.json();
+        return result;
+    }
+
+    const handleSubmit = async (e) => {
         setErrors({});
         e.preventDefault();
         const validationErrors = {};
         if (formData.teamName === '') {
             validationErrors.teamName = 'Team Name is required';
+        }
+        if(/^[^'\",;:*]*$/gm.test(formData.teamName) === false){
+            validationErrors.teamName = 'Please remove special characters ,;:*\'\"';
+        }else{
+            const check = await teamCheck(formData.teamName);
+            if(check === true){
+                validationErrors.teamName = 'Team name already registered';
+            }
+
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
@@ -55,8 +93,13 @@ export default function Register() {
         if (formData.leaderId === '') {
             validationErrors.leaderId = 'Leader ID is required';
         }
-        else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.test(formData.leaderId) === false){
+        else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.leaderId) === false){
             validationErrors.leaderId = 'Please enter a valid ID';
+        }else{
+            const check = await idCheck(formData.leaderId);
+            if(check === true){
+                validationErrors.leaderId = 'This ID has already been registered';
+            }
         }
         if(formData.leaderSection === ''){
             validationErrors.leaderSection = 'Leader Section is required';
@@ -68,7 +111,7 @@ export default function Register() {
         }
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
-        }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
+        }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
             validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
         }
         if(formData.leaderDepartment === ''){
@@ -83,15 +126,21 @@ export default function Register() {
         if (formData.mem1Id === '') {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
-        else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.test(formData.mem1Id) === false){
+        else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.mem1Id) === false){
             validationErrors.mem1Id = 'Please enter a valid ID';
+        }
+        else {
+            const check = await idCheck(formData.mem1Id);
+            if(check === true){
+                validationErrors.mem1Id = 'This ID has already been registered';
+            }
         }
         if(formData.mem1Department === ''){
             validationErrors.mem1Department = 'Member 1 Department is required';
         }
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
-        }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
+        }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
             validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
         }
         if(formData.mem1Section === ''){
@@ -107,15 +156,21 @@ export default function Register() {
             if (formData.mem2Id === '') {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
-            else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.exec(formData.mem2Id) === false){
+            else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.exec(formData.mem2Id) === false){
                 validationErrors.mem2Id = 'Please enter a valid ID';
+            }
+            else {
+                const check = await idCheck(formData.mem2Id);
+                if(check === true){
+                    validationErrors.mem2Id = 'This ID has already been registered';
+                }
             }
             if(formData.mem2Department === ''){
                 validationErrors.mem2Department = 'Member 2 Department is required';
             }
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
-            }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
+            }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
                 validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
             }
         }
@@ -124,6 +179,7 @@ export default function Register() {
             console.log("Sucess")
             handleSuccess();
         }
+
 
     }
     return (
@@ -141,7 +197,7 @@ export default function Register() {
                 }}
 
             >
-                <div className="pt-8 flex flex-col justify-center items-center z-1 pb-40 scale-90">
+                <div className="pt-2 flex flex-col justify-center items-center z-1 pb-20 scale-90">
                     <div
                         style={{ fontFamily: 'anonymousPro', backgroundColor: '#FFFFFF' }}
                         id="clipboard"
@@ -151,7 +207,10 @@ export default function Register() {
                             Coder's Cup - Sign Up Today!
                         </p>
                         <p className="text-black md:text-xl text-md lg:text-xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                            A Minimum of 2 and a Maximum of 3 Members are allowed to form a team.
+                            A Minimum of 2 and a Maximum of 3 Members are allowed to form a team. 
+                        </p>
+                        <p className="text-gray-400 md:text-xl text-md lg:text-xl text-center mb-4" style={{ fontFamily: 'circularStd' }}>
+                        Note: The details entered must be accurate for each member. We will not be responsible for any issues arising from incorrect email addresses or names provided.
                         </p>
                         <form onSubmit={handleSubmit}>
                             <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-16">
