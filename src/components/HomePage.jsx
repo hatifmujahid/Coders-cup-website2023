@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './homepage.css';
 import Navbar from './Navbar';
 import { useState, useEffect } from 'react';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+
 
 function HomePage() {
     const [loading, setLoading] = useState(true);
@@ -29,23 +28,8 @@ function HomePage() {
     return (
         <>
             {loading && (
-                <div
-                    style={{
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        backgroundColor: 'black',
-                        zIndex: 9999,
-                    }}
-                >
-                    <div style={{ width: '10vw', height: '10vh' }}>
-                        <CircularProgressbar value={progress} text={`${progress}%`} styles={{ path: { stroke: 'red' } }} />
-                    </div>
+                <div className="h-screen w-screen flex justify-center items-center">
+                    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-red-700 "></div>
                 </div>
             )}
             <div
