@@ -55,7 +55,7 @@ export default function Register() {
         if (formData.leaderId === '') {
             validationErrors.leaderId = 'Leader ID is required';
         }
-        else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.test(formData.leaderId) === false){
+        else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.test(formData.leaderId) === false){
             validationErrors.leaderId = 'Please enter a valid ID';
         }
         if(formData.leaderSection === ''){
@@ -68,7 +68,7 @@ export default function Register() {
         }
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
-        }else if(/^[plick]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
+        }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
             validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
         }
         if(formData.leaderDepartment === ''){
@@ -83,7 +83,7 @@ export default function Register() {
         if (formData.mem1Id === '') {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
-        else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.test(formData.mem1Id) === false){
+        else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.test(formData.mem1Id) === false){
             validationErrors.mem1Id = 'Please enter a valid ID';
         }
         if(formData.mem1Department === ''){
@@ -91,7 +91,7 @@ export default function Register() {
         }
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
-        }else if(/^[plick]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
+        }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
             validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
         }
         if(formData.mem1Section === ''){
@@ -107,7 +107,7 @@ export default function Register() {
             if (formData.mem2Id === '') {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
-            else if(/^(18|19|20|21|22|23)[pPlLcCiIcC]\d{4}$/.exec(formData.mem2Id) === false){
+            else if(/^(18|19|20|21|22|23)[pPlLcCiIKk]\d{4}$/.exec(formData.mem2Id) === false){
                 validationErrors.mem2Id = 'Please enter a valid ID';
             }
             if(formData.mem2Department === ''){
@@ -115,7 +115,7 @@ export default function Register() {
             }
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
-            }else if(/^[plick]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
+            }else if(/^[pPlLcCiIKk]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
                 validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
             }
         }
