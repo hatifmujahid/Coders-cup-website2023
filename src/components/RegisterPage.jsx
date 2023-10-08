@@ -114,7 +114,7 @@ export default function Register() {
         }else{
             const check = await idCheck(formData.leaderId);
             if(check === true){
-                validationErrors.leaderId = 'This ID has already been registered';
+                validationErrors.leaderId = 'ID already registered';
             }
         }
         if(formData.leaderSection === ''){
@@ -133,7 +133,7 @@ export default function Register() {
         else {
             const check = await emailCheck(formData.leaderEmail);
             if(check === true){
-                validationErrors.leaderEmail = 'This email has already been registered';
+                validationErrors.leaderEmail = 'Email already registered';
             }
         }
         if(formData.leaderDepartment === ''){
@@ -154,7 +154,7 @@ export default function Register() {
         else {
             const check = await idCheck(formData.mem1Id);
             if(check === true){
-                validationErrors.mem1Id = 'This ID has already been registered';
+                validationErrors.mem1Id = 'ID already registered';
             }
         }
         if(formData.mem1Department === ''){
@@ -168,7 +168,7 @@ export default function Register() {
         else {
             const check = await emailCheck(formData.mem1Email);
             if(check === true){
-                validationErrors.mem1Email = 'This email has already been registered';
+                validationErrors.mem1Email = 'Email already registered';
             }
         }
         if(formData.mem1Section === ''){
@@ -190,7 +190,7 @@ export default function Register() {
             else {
                 const check = await idCheck(formData.mem2Id);
                 if(check === true){
-                    validationErrors.mem2Id = 'This ID has already been registered';
+                    validationErrors.mem2Id = 'ID already registered';
                 }
             }
             if(formData.mem2Department === ''){
@@ -204,7 +204,7 @@ export default function Register() {
             else {
                 const check = await emailCheck(formData.mem2Email);
                 if(check === true){
-                    validationErrors.mem2Email = 'This email has already been registered';
+                    validationErrors.mem2Email = 'Email already registered';
                 }
             }
         }
