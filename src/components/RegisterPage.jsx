@@ -70,6 +70,20 @@ export default function Register() {
         const result = await response.json();
         return result;
     }
+    async function emailCheck (email){
+        const response = await fetch(`https://coders-cup-db-private.vercel.app/email`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email
+            }),
+        });
+
+        const result = await response.json();
+        return result;
+    }
 
     const handleSubmit = async (e) => {
         setErrors({});
