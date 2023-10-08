@@ -164,9 +164,9 @@ export default function Register() {
             validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
         }
         else {
-            const check = await emailCheck(formData.leaderEmail);
+            const check = await emailCheck(formData.mem1Email);
             if(check === true){
-                validationErrors.leaderEmail = 'This email has already been registered';
+                validationErrors.mem1Email = 'This email has already been registered';
             }
         }
         if(formData.mem1Section === ''){
@@ -200,9 +200,9 @@ export default function Register() {
                 validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
             }
             else {
-                const check = await emailCheck(formData.leaderEmail);
+                const check = await emailCheck(formData.mem2Email);
                 if(check === true){
-                    validationErrors.leaderEmail = 'This email has already been registered';
+                    validationErrors.mem2Email = 'This email has already been registered';
                 }
             }
         }
