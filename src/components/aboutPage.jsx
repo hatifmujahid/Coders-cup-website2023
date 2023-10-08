@@ -3,15 +3,19 @@ import Footer from "./footer";
 import { acmLogo } from "../assets";
 import AboutHeader from "../assets/aboutHeader.png";
 import { homeBackground, registrationPlaceholder } from '../assets';
-import pic1 from '../assets/1.png';
-import pic2 from '../assets/2.png';
-import pic3 from '../assets/3.png';
-import pic4 from '../assets/4.png';
-import pic5 from '../assets/5.png';
+import './aboutPage.css'
+import Ahmed from '../assets/ahmed.png';
+import Hira from '../assets/hira.png';
+import Hamad from '../assets/hamd.png';
+import Sarim from '../assets/sarim.png';
+import Usman from '../assets/usman.png';
+import Sprite from '../assets/Sprite-0001.png';
+import upcoming from '../assets/upcoming.png';
+
 
 export default function AboutPage() {
     return (
-        <>
+        <div className="transition"> 
             <Navbar />
             <div
                 className="homeimg transition "
@@ -22,67 +26,135 @@ export default function AboutPage() {
                     backgroundRepeat: 'repeat',
                     position: 'relative',
                     backgroundAttachment: 'fixed',
+                    transition: 'all 0.5s ease-in-out',
                 }}
 
             >
-                {/* <div className="pt-8 flex flex-col justify-center items-center relative scale-90">
+                <div className="flex flex-col lg:flex-row items-center justify-center ">
+                    <div className="flex justify-center flex-col w-full lg:w-1/3 ">
+                        <img src={AboutHeader} alt="about Us" className="lg:w-full md:w-3/6 w-5/6 mx-auto" />
+                        <p className="text-white mt-4 p-6 font-normal md:text-xl" style={{ fontFamily: 'spotifyMedium' }}>
+                        The Coders' Cup is an intra-FAST programming competition that
+                        stands as the epitome of where rising minds polish and develop
+                        their coding abilities while debugging their very own creations.
+                        Riddled with challenging questions and mind-boggling problems,
+                        Coders' Cup is one of its kind. With the extra motivation that
+                        comes with the theme, Coders' Cup has the perfect recipe to remain
+                        unparalleled.
+                        </p>
 
-                    <img src={AboutHeader} alt="aboutHeader" className="sm:w-2/5 sm:h-2/5 w-2/5 h-2/5 mt-[-20px] relative z-2 " />
-                    <p
-                            className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-6/12 text-center"
-                            style={{ fontFamily: 'spotifyMedium' }}
-                        >
-                        The Coders' Cup is an intra-FAST programming competition that stands as the epitome of where rising minds polish and develop their coding abilities while debugging their very own creations. Riddled with challenging questions and mind-boggling problems, Coders' Cup is one of its kind. With the extra motivation that comes with the theme, Coders' Cup has the perfect recipe to remain unparalleled.
-                    </p>
-                </div> */}
-                {/* <div id="default-carousel" class="relative w-full z-50" data-carousel="slide">
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                        
-                        <div class="duration-700 ease-in-out" data-carousel-item>
-                            <img src={pic1} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        
-                        <div class="duration-700 ease-in-out" data-carousel-item>
-                            <img src={pic2} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        
-                        <div class="duration-700 ease-in-out" data-carousel-item>
-                            <img src={pic3} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={pic4} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                        </div>
-                        
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={pic5} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                        <div className="hidden lg:flex w-80 m-auto">
+                            <img src={upcoming} alt="upcoming" />
                         </div>
                     </div>
-                    
-                    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+
+
+
+                    {/* Excome */}
+
+                    {/* div for container */}
+                    <div className="flex flex-col m-1">
+                        {/* div for log */}
+                        <div>
+                        <div className="">
+                            <img src={Sprite} alt="about Us" className="w-4/6 lg:w-2/6 mx-auto mb-4" />
+                        </div>
+                            <p className="text-white -mb-10 font-bold tracking-wider text-center text-xl md:text-2xl lg:text-3xl ">
+                            EXECUTIVE COMMITEE '23-'24
+                            </p>
+                        </div>
+
+                        {/* div for main excome */}
+                        <div className="flex flex-col md:flex-row md:space-x-16 items-center m-auto">
+
+                        <div className="flex m-8 relative ">
+                            <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 h-28 rounded-lg z-10 "></div>
+                            <p className="absolute bottom-7 right-0 text-lg font-semibold text-white p-3 z-30">
+                            President
+                            </p>
+                            <p className="absolute bottom-0 right-0 text-white text-4xl font-extrabold p-2 z-30 text-xl">
+                            M. Ahmed
+                            </p>
+                            <img
+                            src={Ahmed}
+                            alt="Person"
+                            className=" w-80 lg:w-80 relative z-20  right-12"
+                            />
+                        </div>
+
+                        <div className="flex m-8 relative ">
+                            <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 h-28 rounded-lg z-10 "></div>
+                            <p className="absolute bottom-7 right-0 text-lg font-semibold text-white p-3 z-30">
+                            Vice-President
+                            </p>
+                            <p className="absolute bottom-0 right-0 text-white text-4xl font-extrabold p-2 z-30 text-xl">
+                            Hira Rehman
+                            </p>
+                            <img
+                            src={Hira}
+                            alt="Person"
+                            className=" w-80 lg:w-80 relative z-20  right-12"
+                            />
+                        </div>
+
+                        </div>
+
+                        {/* div for low profile */}
+                        <div className="flex flex-col md:flex-row md:space-x-20 items-center m-auto">
+                        <div className="flex relative">
+                            <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-56 lg:w-72 h-24 rounded-lg z-10 "></div>
+                            <p className="absolute bottom-5 -right-6 text-lg font-semibold text-white p-3 z-30">
+                            General Sec.
+                            </p>
+                            <p className="absolute bottom-0 -right-6 text-white text-2xl font-extrabold p-2 z-30 text-xl">
+                            Hamad Sami
+                            </p>
+                            <img
+                            src={Hamad}
+                            alt="Person"
+                            className=" w-56 lg:w-64 relative z-20  right-14"
+                            />
+                        </div>
+
+                        <div className="flex relative">
+                            <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-56 lg:w-72 h-24 rounded-lg z-10 "></div>
+                            <p className="absolute bottom-5  -right-6 text-lg font-semibold text-white ml-2 p-4 z-30">
+                            Treasurer
+                            </p>
+                            <p className="absolute bottom-0 -right-6 text-white text-2xl font-extrabold p-2 z-30 text-xl">
+                            Sarim Latif
+                            </p>
+                            <img
+                            src={Sarim}
+                            alt="Person"
+                            className=" w-56 lg:w-64 relative z-20  right-14"
+                            />
+                        </div>
+
+                        <div className="flex relative ">
+                            <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-56 lg:w-72 h-24 rounded-lg z-10 "></div>
+                            <p className="absolute bottom-5 -right-6 text-lg font-semibold text-white p-3 z-30">
+                            Event Admin
+                            </p>
+                            <p className="absolute bottom-0 -right-6 text-white text-2xl font-extrabold p-2 z-30 text-xl">
+                            Usman Nisar
+                            </p>
+                            <img
+                            src={Usman}
+                            alt="Person"
+                            className=" w-56 lg:w-64 relative z-20  right-14"
+                            />
+                        </div>
+                        </div>
                     </div>
-                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                            </svg>
-                            <span class="sr-only">Previous</span>
-                        </span>
-                    </button>
-                    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                            </svg>
-                            <span class="sr-only">Next</span>
-                        </span>
-                    </button>
-                </div> */}
+
+
+                    <div className="flex lg:hidden w-80 mt-10 m-auto">
+                        <img src={upcoming} alt="upcoming" />
+                    </div>
+
+
+                    </div>
             </div>
 
             <footer class="bg-transparent pt-3">
@@ -143,6 +215,6 @@ export default function AboutPage() {
                     
                 </div>
             </footer>
-        </>
+        </div>
     )
 }
