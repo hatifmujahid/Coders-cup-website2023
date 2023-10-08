@@ -30,7 +30,7 @@ export default function Register() {
         mem2Name: content.mem2Name ? content.mem2Name : '',
         mem2Id: content.mem2Id ? content.mem2Id : '',
         mem2Section: content.mem2Section ? content.mem2Section : '',
-        mem2Department: content.mem2Department ? content.mem2Department : '',
+        mem2Department: content.mem2Department ? content.mem2Department : 'CS',
         mem2Email: content.mem2Email ? content.mem2Email : '',
     };
     const [errors, setErrors] = React.useState({});
@@ -111,7 +111,7 @@ export default function Register() {
         }
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
-        }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
+        }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
             validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
         }
         if(formData.leaderDepartment === ''){
@@ -140,7 +140,7 @@ export default function Register() {
         }
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
-        }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
+        }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
             validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
         }
         if(formData.mem1Section === ''){
@@ -170,7 +170,7 @@ export default function Register() {
             }
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
-            }else if(/^[KLPIF]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
+            }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
                 validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
             }
         }
