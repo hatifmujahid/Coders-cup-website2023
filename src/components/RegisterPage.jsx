@@ -214,6 +214,7 @@ export default function Register() {
             handleSuccess();
         }
         setSubmitLoading(false);
+        document.getElementById('clipboard').scrollIntoView();
     }
     return (
         <>
@@ -516,7 +517,7 @@ export default function Register() {
                                 <img src={redacted} alt="redacted" className="lg:visible invisible ml-60 h-60" />
                             </div>
                         </form>
-                        <button type="submit" style={{fontFamily:"circularStd"}}className="button-confirm lg:ml-[80%] ml-[40%] mt-8 lg:text-2xl md:text-xl  p-4 text-lg" onClick={handleSubmit}>
+                        <button type="submit" style={{fontFamily:"circularStd"}}className="button-confirm lg:ml-[80%] ml-[40%] mt-8 lg:text-2xl md:text-xl p-4 text-lg" onClick={handleSubmit}>
                             {submitLoading? <div role="status">
                                 <svg aria-hidden="true" class="inline w-4 h-4 m-2 text-gray-200 animate-spin dark:text-gray-600 fill-yellow-200" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
