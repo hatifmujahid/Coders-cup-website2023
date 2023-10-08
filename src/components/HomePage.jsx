@@ -15,7 +15,7 @@ function HomePage() {
     useEffect(() => {
         const interval = setInterval(() => {
             const elapsedTime = Date.now() - startTime;
-            const progress = Math.min(Math.floor((elapsedTime / 5000) * 100), 100);
+            const progress = Math.min(Math.floor((elapsedTime / 3000) * 100), 100);
             setProgress(progress);
             if (progress >= 100) {
                 clearInterval(interval);

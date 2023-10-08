@@ -3,7 +3,7 @@ import Footer from "./footer";
 import { acmLogo } from "../assets";
 import AboutHeader from "../assets/aboutHeader.png";
 import { homeBackground, registrationPlaceholder } from '../assets';
-import './AboutPage.css'
+import './aboutPage.css'
 import Ahmed from '../assets/ahmed.png';
 import Hira from '../assets/hira.png';
 import Hamad from '../assets/hamd.png';
@@ -15,7 +15,7 @@ import upcoming from '../assets/upcoming.png';
 
 export default function AboutPage() {
     return (
-        <>
+        <div className="transition"> 
             <Navbar />
             <div
                 className="homeimg transition "
@@ -30,7 +30,7 @@ export default function AboutPage() {
                 }}
 
             >
-                <div className="flex flex-col lg:flex-row items-center justify-center m-5">
+                <div className="flex flex-col lg:flex-row items-center justify-center ">
                     <div className="flex justify-center flex-col w-full lg:w-1/3 ">
                         <img src={AboutHeader} alt="about Us" className="lg:w-full md:w-3/6 w-5/6 mx-auto" />
                         <p className="text-white mt-4 p-6 font-normal md:text-xl" style={{ fontFamily: 'spotifyMedium' }}>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                             President
                             </p>
                             <p className="absolute bottom-0 right-0 text-white text-4xl font-extrabold p-2 z-30 text-xl">
-                            Mr. Ahmed
+                            M. Ahmed
                             </p>
                             <img
                             src={Ahmed}
@@ -103,10 +103,10 @@ export default function AboutPage() {
                         <div className="flex flex-col md:flex-row md:space-x-20 items-center m-auto">
                         <div className="flex relative">
                             <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-56 lg:w-72 h-24 rounded-lg z-10 "></div>
-                            <p className="absolute bottom-5 -right-8 text-lg font-semibold text-white p-3 z-30">
+                            <p className="absolute bottom-5 -right-6 text-lg font-semibold text-white p-3 z-30">
                             General Sec.
                             </p>
-                            <p className="absolute bottom-0 -right-8 text-white text-2xl font-extrabold p-2 z-30 text-xl">
+                            <p className="absolute bottom-0 -right-6 text-white text-2xl font-extrabold p-2 z-30 text-xl">
                             Hamad Sami
                             </p>
                             <img
@@ -215,6 +215,6 @@ export default function AboutPage() {
                     
                 </div>
             </footer>
-        </>
+        </div>
     )
 }
