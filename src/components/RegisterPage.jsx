@@ -70,6 +70,20 @@ export default function Register() {
         const result = await response.json();
         return result;
     }
+    async function emailCheck (email){
+        const response = await fetch(`https://coders-cup-db-private.vercel.app/email`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: email
+            }),
+        });
+
+        const result = await response.json();
+        return result;
+    }
 
     const handleSubmit = async (e) => {
         setErrors({});
@@ -114,6 +128,12 @@ export default function Register() {
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
             validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
         }
+        else {
+            const check = await emailCheck(formData.leaderEmail);
+            if(check === true){
+                validationErrors.leaderEmail = 'This email has already been registered';
+            }
+        }
         if(formData.leaderDepartment === ''){
             validationErrors.leaderDepartment = 'Leader Department is required';
         }
@@ -142,6 +162,12 @@ export default function Register() {
             validationErrors.mem1Email = 'Member 1 Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
             validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
+        }
+        else {
+            const check = await emailCheck(formData.leaderEmail);
+            if(check === true){
+                validationErrors.leaderEmail = 'This email has already been registered';
+            }
         }
         if(formData.mem1Section === ''){
             validationErrors.mem1Section = 'Member 1 Section is required';
@@ -172,6 +198,12 @@ export default function Register() {
                 validationErrors.mem2Email = 'Member 2 Email is required';
             }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
                 validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
+            }
+            else {
+                const check = await emailCheck(formData.leaderEmail);
+                if(check === true){
+                    validationErrors.leaderEmail = 'This email has already been registered';
+                }
             }
         }
         setErrors(validationErrors);
