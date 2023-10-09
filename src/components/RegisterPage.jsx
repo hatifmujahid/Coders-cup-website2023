@@ -101,7 +101,6 @@ export default function Register() {
             if(check === true){
                 validationErrors.teamName = 'Team name already registered';
             }
-
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
@@ -110,7 +109,7 @@ export default function Register() {
             validationErrors.leaderId = 'Leader ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.leaderId) === false){
-            validationErrors.leaderId = 'Please enter a valid ID';
+            validationErrors.leaderId = 'Invalid ID. ID format: 20K1234';
         }else{
             const check = await idCheck(formData.leaderId);
             if(check === true){
@@ -128,7 +127,7 @@ export default function Register() {
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
-            validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
+            validationErrors.leaderEmail = 'Correct format: 20k1234@nu...';
         }
         else {
             const check = await emailCheck(formData.leaderEmail);
@@ -149,7 +148,7 @@ export default function Register() {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.mem1Id) === false){
-            validationErrors.mem1Id = 'Please enter a valid ID';
+            validationErrors.mem1Id = 'Invalid ID. ID format: 20K1234';
         }
         else {
             const check = await idCheck(formData.mem1Id);
@@ -163,7 +162,7 @@ export default function Register() {
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
-            validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
+            validationErrors.mem1Email = 'Correct format: 20k1234@nu...';
         }
         else {
             const check = await emailCheck(formData.mem1Email);
@@ -185,7 +184,7 @@ export default function Register() {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
             else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.exec(formData.mem2Id) === false){
-                validationErrors.mem2Id = 'Please enter a valid ID';
+                validationErrors.mem2Id = 'Invalid ID. ID format: 20K1234';
             }
             else {
                 const check = await idCheck(formData.mem2Id);
@@ -199,7 +198,7 @@ export default function Register() {
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
             }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
-                validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
+                validationErrors.mem2Email = 'Correct format: 20k1234@nu...';
             }
             else {
                 const check = await emailCheck(formData.mem2Email);
