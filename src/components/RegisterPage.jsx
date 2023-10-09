@@ -101,7 +101,6 @@ export default function Register() {
             if(check === true){
                 validationErrors.teamName = 'Team name already registered';
             }
-
         }
         if (formData.leaderName === '') {
             validationErrors.leaderName = 'Leader Name is required';
@@ -110,7 +109,7 @@ export default function Register() {
             validationErrors.leaderId = 'Leader ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.leaderId) === false){
-            validationErrors.leaderId = 'Please enter a valid ID';
+            validationErrors.leaderId = 'Invalid ID. ID format: 20K1234';
         }else{
             const check = await idCheck(formData.leaderId);
             if(check === true){
@@ -149,7 +148,7 @@ export default function Register() {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.mem1Id) === false){
-            validationErrors.mem1Id = 'Please enter a valid ID';
+            validationErrors.mem1Id = 'Invalid ID. ID format: 20K1234';
         }
         else {
             const check = await idCheck(formData.mem1Id);
@@ -185,7 +184,7 @@ export default function Register() {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
             else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.exec(formData.mem2Id) === false){
-                validationErrors.mem2Id = 'Please enter a valid ID';
+                validationErrors.mem2Id = 'Invalid ID. ID format: 20K1234';
             }
             else {
                 const check = await idCheck(formData.mem2Id);
