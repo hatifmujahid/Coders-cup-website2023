@@ -127,7 +127,7 @@ export default function Register() {
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
-            validationErrors.leaderEmail = 'Please enter a valid FAST-NU email';
+            validationErrors.leaderEmail = 'Correct format: 20k1234@nu...';
         }
         else {
             const check = await emailCheck(formData.leaderEmail);
@@ -162,7 +162,7 @@ export default function Register() {
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
-            validationErrors.mem1Email = 'Please enter a valid FAST-NU email';
+            validationErrors.mem1Email = 'Correct format: 20k1234@nu...';
         }
         else {
             const check = await emailCheck(formData.mem1Email);
@@ -198,7 +198,7 @@ export default function Register() {
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
             }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
-                validationErrors.mem2Email = 'Please enter a valid FAST-NU email';
+                validationErrors.mem2Email = 'Correct format: 20k1234@nu...';
             }
             else {
                 const check = await emailCheck(formData.mem2Email);
