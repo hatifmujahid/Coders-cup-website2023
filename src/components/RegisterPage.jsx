@@ -109,7 +109,7 @@ export default function Register() {
             validationErrors.leaderId = 'Leader ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.leaderId) === false){
-            validationErrors.leaderId = 'Invalid ID. ID format: 20K1234';
+            validationErrors.leaderId = 'Invalid ID. ID format: 20[K]1234';
         }else{
             const check = await idCheck(formData.leaderId);
             if(check === true){
@@ -127,7 +127,7 @@ export default function Register() {
         if (formData.leaderEmail === '') {
             validationErrors.leaderEmail = 'Leader Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.leaderEmail) === false){
-            validationErrors.leaderEmail = 'Correct format: 20k1234@nu...';
+            validationErrors.leaderEmail = 'Correct format: [k]20XXXX@nu.edu.pk';
         }
         else {
             const check = await emailCheck(formData.leaderEmail);
@@ -148,7 +148,7 @@ export default function Register() {
             validationErrors.mem1Id = 'Member 1 ID is required';
         }
         else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.test(formData.mem1Id) === false){
-            validationErrors.mem1Id = 'Invalid ID. ID format: 20K1234';
+            validationErrors.mem1Id = 'Invalid ID. ID format: 20[K]1234';
         }
         else {
             const check = await idCheck(formData.mem1Id);
@@ -162,7 +162,7 @@ export default function Register() {
         if (formData.mem1Email === '') {
             validationErrors.mem1Email = 'Member 1 Email is required';
         }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem1Email) === false){
-            validationErrors.mem1Email = 'Correct format: 20k1234@nu...';
+            validationErrors.mem1Email = 'Correct format: [k]20XXXX@nu.edu.pk';
         }
         else {
             const check = await emailCheck(formData.mem1Email);
@@ -184,7 +184,7 @@ export default function Register() {
                 validationErrors.mem2Id = 'Member 2 ID is required';
             }
             else if(/^(18|19|20|21|22|23)[KLPIF]\d{4}$/.exec(formData.mem2Id) === false){
-                validationErrors.mem2Id = 'Invalid ID. ID format: 20K1234';
+                validationErrors.mem2Id = 'Invalid ID. ID format: 20[K]1234';
             }
             else {
                 const check = await idCheck(formData.mem2Id);
@@ -198,7 +198,7 @@ export default function Register() {
             if (formData.mem2Email === '') {
                 validationErrors.mem2Email = 'Member 2 Email is required';
             }else if(/^[klpif]\d{6}@nu\.edu\.pk$/gm.test(formData.mem2Email) === false){
-                validationErrors.mem2Email = 'Correct format: 20k1234@nu...';
+                validationErrors.mem2Email = 'Correct format: [k]20XXXX@nu.edu.pk';
             }
             else {
                 const check = await emailCheck(formData.mem2Email);
