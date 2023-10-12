@@ -73,9 +73,9 @@ function HomePage() {
                 <Navbar />
 
                 <div className="pt-8 flex flex-col justify-center items-center relative ">
-                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[20px] relative z-2 " loading='eager'/>
+                    <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[5px] relative z-2 " loading='eager'/>
                     <p
-                        className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-6/12 text-center"
+                        className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-8/12 text-center"
                         style={{ fontFamily: 'spotifyMedium' }}
                     >
                         Prepare to embark on an extraordinary coding journey as we announce that registrations for the Coder's Cup, presented by ACM

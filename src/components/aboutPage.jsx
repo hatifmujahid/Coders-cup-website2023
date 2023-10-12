@@ -6,7 +6,7 @@ import { homeBackground, registrationPlaceholder } from '../assets';
 import './aboutPage.css'
 import Ahmed from '../assets/ahmed.png';
 import Hira from '../assets/hira.png';
-import Hamad from '../assets/hamd.png';
+import Shahmir from '../assets/shahmir.png';
 import Sarim from '../assets/sarim.png';
 import Usman from '../assets/usman.png';
 import Sprite from '../assets/Sprite-0001.png';
@@ -103,14 +103,14 @@ export default function AboutPage() {
                         <div className="flex flex-col md:flex-row md:space-x-20 items-center m-auto">
                         <div className="flex relative">
                             <div className="custom-bg-color absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 md:w-56 lg:w-72 h-24 rounded-lg z-10 "></div>
-                            <p className="absolute bottom-5 -right-6 text-lg font-semibold text-white p-3 z-30">
+                            <p className="absolute bottom-7 -right-6 text-lg font-semibold text-white p-3 z-30">
                             General Sec.
                             </p>
                             <p className="absolute bottom-0 -right-6 text-white text-2xl font-extrabold p-2 z-30 text-xl">
-                            Hamad Sami
+                            M. Shahmir
                             </p>
                             <img
-                            src={Hamad}
+                            src={Shahmir}
                             alt="Person"
                             className=" w-56 lg:w-64 relative z-20  right-14"
                             />
