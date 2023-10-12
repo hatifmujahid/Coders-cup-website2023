@@ -11,9 +11,9 @@ export default function Register() {
     
     const navigate = useNavigate();
     const location = useLocation();
-    const content = location.state.data ? location.state.data : {};
+    const content = location.state ? location.state.data ? location.state.data : {} : {};
     const handleSuccess = () => navigate('/register/confirm',{ state: {data: formData} });
-    const data = {
+    const data = content ? {
         teamName: content.teamName ? content.teamName : '',
         teamHouse: content.teamHouse ? content.teamHouse : 'Hawkings Hounds',
         teamBatch: content.teamBatch ? content.teamBatch : '2023',
@@ -33,6 +33,26 @@ export default function Register() {
         mem2Section: content.mem2Section ? content.mem2Section : '',
         mem2Department: content.mem2Department ? content.mem2Department : 'CS',
         mem2Email: content.mem2Email ? content.mem2Email : '',
+    } : {
+        teamName: '',
+        teamHouse: 'Hawkings Hounds',
+        teamBatch: '2023',
+        leaderName: '',
+        leaderId: '',
+        leaderEmail:  '',
+        leaderSection:  '',
+        leaderPhone:  '',
+        leaderDepartment:  'CS',
+        mem1Name: '',
+        mem1Id:  '',
+        mem1Section:  '',
+        mem1Department: 'CS',
+        mem1Email: '',
+        mem2Name: '',
+        mem2Id:  '',
+        mem2Section: '',
+        mem2Department:  'CS',
+        mem2Email: '',
     };
     const [errors, setErrors] = React.useState({});
     const [formData, setFormData] = React.useState(data);
