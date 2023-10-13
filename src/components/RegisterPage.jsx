@@ -263,7 +263,7 @@ export default function Register() {
                             Coder's Cup - Regisration closed! 
                         </p>
                         <p className="text-black md:text-xl text-md lg:text-xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                            Thank you for registering. ~Web Dev Team ❤
+                            Thank you to all 722 teams for registering. ~Web Dev Team ❤
                         </p>
                         <p className="text-gray-400 md:text-xl text-md lg:text-xl text-center mb-4" style={{ fontFamily: 'circularStd' }}>
                         To showcase our work, you can go through a mock registration process(DB has been disconnected 😄). While you're at it check out the creators of this site <span className="text-black font-normal cursor-pointer hover:scale-110" onClick={devs}>here:</span>
