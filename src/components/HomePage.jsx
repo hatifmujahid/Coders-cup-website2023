@@ -78,7 +78,7 @@ function HomePage() {
                         className="font-normal max-[400px]:text-sm md:text-l lg:text-[1.5rem] text-white w-8/12 text-center"
                         style={{ fontFamily: 'spotifyMedium' }}
                     >
-                        The Coder's Cup, presented by <span className='underline'>HBL KONNECT X ACM NUCES</span>, has reached its full capacity, and registrations are now closed! We want to thank all the brave coders who joined us on this extraordinary coding journey. Stay tuned for more exciting events in the future!
+                        The Coder's Cup, presented by <span className='underline'>HBL KONNECT | ACM NUCES</span>, has reached its full capacity, and registrations are now closed! We want to thank all the brave coders who joined us on this extraordinary coding journey. Stay tuned for more exciting events in the future!
                     </p>
 
                     <div className="scale-75 lg:scale-[85%]">
