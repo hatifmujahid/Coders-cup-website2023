@@ -14,21 +14,19 @@ export default function ConfirmPage() {
     async function sendingData() {
         if(!submitted){
         setSubmitted(true)
-        const result = await fetch(`https://coders-cup-db-private.vercel.app/submit`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                data: data,
-            }),
-        }).then((resp) => resp.json());
-        if(result.acknowledged == true){
-            alert("Your Details have been added. Please check your email for further details")
+        // const result = await fetch(`https://coders-cup-db-private.vercel.app/submit`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //         data: data,
+        //     }),
+        // }).then((resp) => resp.json());
+        // if(){
+            alert("Registrations are closed. Thank you for participating. - Team Web Dev ♥")
             navigate('/');
-        }else{
-            alert("There was some error in submitting your response")
-        }
+        // }
         }
     }
 
