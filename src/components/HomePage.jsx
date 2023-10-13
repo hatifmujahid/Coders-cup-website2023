@@ -71,7 +71,7 @@ function HomePage() {
                 }}
             >
                 <Navbar />
-                
+
                 <div className="pt-8 flex flex-col justify-center items-center relative ">
                     <img src={codersCupLogo} alt="logo" className="sm:w-2/5 sm:h-2/5 w-4/5 h-4/5 mt-[5px] relative z-2 " loading='eager'/>
                     <p
@@ -87,6 +87,7 @@ function HomePage() {
                                 id="glow"
                                 style={{ fontFamily: 'spotifyMedium' }}
                                 className=" hover:scale-105 z-2 mt-8 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"
+                                onClick={() => { alert('Registeration ended! Emails will be dispatched soon! Good luck to the 730 teams 😁'); }}
                             >
                                 {' '}
                                 Registeration ended!
