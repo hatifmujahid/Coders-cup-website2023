@@ -87,7 +87,7 @@ function HomePage() {
                                 id="glow"
                                 style={{ fontFamily: 'spotifyMedium' }}
                                 className=" hover:scale-105 z-2 mt-8 bg-white text-black py-3 px-10 rounded-full text-xl relative hover:bg-black hover:text-red-600  transition duration-300"
-                                onClick={() => { alert('Registeration ended! Emails will be dispatched soon! Good luck to the 730 teams 😁'); }}
+                                onClick={() => { alert('Registeration ended! Emails will be dispatched soon! Good luck to the 729 teams 😁'); }}
                             >
                                 {' '}
                                 Registeration ended!
