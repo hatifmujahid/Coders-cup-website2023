@@ -235,6 +235,9 @@ export default function Register() {
         setSubmitLoading(false);
         document.getElementById('clipboard').scrollIntoView();
     }
+    function devs(){
+        document.getElementById('devs').scrollIntoView()
+    }
     return (
         <>
             <Navbar />
@@ -257,15 +260,15 @@ export default function Register() {
                         className="p-10 mt-[5%] border-4 border-dashed border-gray-800 w-[80%] h-[80%] z-2"
                     >
                         <p className="text-black md:text-2xl text-l lg:text-5xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                            Coder's Cup - Sign Up Today!
+                            Coder's Cup - Regisration closed! 
                         </p>
                         <p className="text-black md:text-xl text-md lg:text-xl  text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                            A Minimum of 2 and a Maximum of 3 Members are allowed to form a team. 
+                            Thank you to all 722 teams for registering. ~Web Dev Team ❤
                         </p>
                         <p className="text-gray-400 md:text-xl text-md lg:text-xl text-center mb-4" style={{ fontFamily: 'circularStd' }}>
-                        Note: The details entered must be accurate for each member. We will not be responsible for any issues arising from incorrect email addresses or names provided.
+                        To showcase our work, you can go through a mock registration process(DB has been disconnected 😄). While you're at it check out the creators of this site <span className="text-black font-normal cursor-pointer hover:scale-110" onClick={devs}>here:</span>
                         </p>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} >
                             <div className="flex flex-col lg:flex-row sm:flex-col md:flex-col mt-16">
                                 <label type="text" className="lg:text-2xl md:text-xl sm:text-base" style={{ fontFamily: 'anonymousPro' }}>
                                     Team Name:{' '}
@@ -547,7 +550,7 @@ export default function Register() {
                         </button>
                     </div>
                 </div>
-                <footer class="bg-black pt-3">
+                <footer id='devs' class="bg-black pt-3">
                 <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                     <div class="md:flex md:justify-between">
                         <div class="mb-6 md:mb-0">
