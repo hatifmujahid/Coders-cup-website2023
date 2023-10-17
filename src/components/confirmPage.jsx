@@ -56,6 +56,10 @@ export default function ConfirmPage() {
                 >
                     House Name: <span className="font-bold">{data.teamHouse}</span>
                 </p>
+                <p className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
+                    style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}>
+                   Registrations closed
+                </p>
                 <p
                     className="font-normal md:text-lg sm:text-small text-white lg:text-[1.5rem] dark:text-white w-4/12 text-center"
                     style={{ fontFamily: 'anonymousPro',  textTransform: "uppercase"}}
