@@ -17,5 +17,6 @@ steps:
 
 - script: |
     npm install
+    npm run build
     vite build
   displayName: 'npm install and build'
