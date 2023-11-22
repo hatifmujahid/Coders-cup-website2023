@@ -16,7 +16,7 @@ steps:
   displayName: 'npm install and build'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'Coders-cup-website2023' # Change this path based on your project structure
+    rootFolderOrFile: 'dist' # Change this path based on your project structure
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' # Adjust the artifact name as needed
     replaceExistingArchive: true
