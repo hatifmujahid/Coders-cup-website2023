@@ -3,7 +3,7 @@ module.exports = {
       browser: true,
       es2021: true,
   },
-  extends: ['standard', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'prettier'],
+  extends: ['standard', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'prettier', "react-app", "react-app/jest"],
   overrides: [
       {
           env: {

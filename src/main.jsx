@@ -13,7 +13,7 @@ import AboutPage from './components/aboutPage'
  
 inject();
 
-const BrowserRouter = createBrowserRouter([
+const BrowserRouters = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -33,7 +33,8 @@ const BrowserRouter = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  
   <React.StrictMode>
-    <RouterProvider router={BrowserRouter} />
+    <RouterProvider router={BrowserRouters} />
   </React.StrictMode>,
 )

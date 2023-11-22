@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import { useState, useEffect } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { BrowserRouter } from 'react-router-dom';
 
 function HomePage() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function HomePage() {
 
     return (
         <>
+        
             {loading && (
                 <div
                     className='transition'
@@ -97,6 +99,7 @@ function HomePage() {
                     </div>
                 </div>
             </div>
+            
         </>
     );
 }

@@ -20,7 +20,7 @@ import { render } from 'react-dom';
 function App() {
     
     return (
-        <div style={{}} className="transition">
+        <div style={{}} id='app' className="transition">
             <HomePage />
             <div
                 className="flex flex-col justify-center items-center duration-10 ease-in-out relative snap-start transition"
